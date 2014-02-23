@@ -20,7 +20,7 @@ include './comm/title.php';
         <div class="apply_t1">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" class="sele" size="20" maxlength="20" name="password" id="password"></div>
        </div>
 		<div class="apply_next">
-	        <input type="hidden" name="url" value="<?php echo $_REQUEST['url'] ;?>">
+	        <input type="hidden" name="url" value="<?php echo @$_REQUEST['url'] ;?>">
 	        <input type="button" name="regist" id="regist" class="btn-img btn-regist" value="注册" />&nbsp;&nbsp;
 	        <input type="button" class="btn-img btn-regist" id="login" value="登陆" tabindex="5">
 		</div>
@@ -37,6 +37,7 @@ include './comm/title.php';
 <script type="text/javascript">
 $(function(){
 	$("#regist").click(function(){
+		alert(1) ;
 		document.location.href="reg.php" ;
 	});
 	

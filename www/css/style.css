@@ -27,7 +27,7 @@ a:hover img{text-decoration:none;}
 .floatleft{float:left;}
 .floatright{float:right;}
  
-.org_bg{margin:0 auto; width:994px; height:30px; margin-bottom:10px;border-top:none;background:#0486d9;padding-top:4px;padding-left:10px;_margin-bottom:-4px;}
+.org_bg{margin:0 auto; width:994px; height:30px; margin-bottom:10px;border-top:none;background:#000;padding-top:4px;padding-left:10px;_margin-bottom:-4px;}
 .org_tab_l_r{display:none;}
 .select .org_tab_l_r{display:block; height:30px; background:none; }
 .org_tab_c{height:30px;line-height:24px; width:auto; padding:0 30px; font-size:14px; text-align:center;  background:none; color:#F}
