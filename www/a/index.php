@@ -8,7 +8,7 @@
 
 <meta name="description" content="">
 <meta name="keywords" content="">
-<title>纽摄</title>
+<title>纽摄俱乐部</title>
 
 <link type="text/css" href="./comm/common.css" rel="stylesheet">
 </head>
@@ -19,3 +19,6 @@ include 'comm/title.php';
 
 
 include 'comm/main1.php';
+
+
+include 'comm/footer.php';
