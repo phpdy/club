@@ -15,10 +15,16 @@
 
 <body>
 <?php
-include 'comm/title.php';
+include 'comm/title.php' ;
+
+$t = $_GET['t'] ;
+if(empty($t)){
+	include "main0.php" ;
+} else if($t>0 && $t<4){
+	include "main1.php" ;
+} else {
+	
+}
 
 
-include 'comm/main1.php';
-
-
-include 'comm/footer.php';
+include 'comm/footer.php' ;

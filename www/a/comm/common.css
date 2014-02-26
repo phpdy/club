@@ -75,6 +75,29 @@ a:hover {
 	font-weight:normal;
 }
 
+/**** 首页 ***/
+.fenlei{
+	float:left;
+	margin: auto;
+	margin-left: 15px;
+	width:280px;
+}
+.fenlei li{
+	margin-bottom: 15px;
+	background:#ddd;
+}
+.list{
+	background:#ddd;
+	text-align: left;
+}
+.list_l{
+	float:left;
+	margin: auto;
+	margin-left: 0px;
+	background:#ddd;
+}
+
+/***** 二级页面 *******/
 /**正文部分**/
 #mainbody {
 	width:100%;
@@ -132,6 +155,9 @@ a:hover {
 	text-align: left;
 	font-weight:bold;
 	font-size:18px;
+	background: url(../images/01.jpg) no-repeat left;
+	margin-left: 0px;
+	padding-left: 20px;
 }
 .mainc_img{
 	text-align: left;
