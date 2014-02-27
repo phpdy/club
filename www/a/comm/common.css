@@ -79,7 +79,7 @@ a:hover {
 .fenlei{
 	float:left;
 	margin: auto;
-	margin-left: 15px;
+	margin-left: 30px;
 	width:280px;
 }
 .fenlei li{
@@ -88,13 +88,22 @@ a:hover {
 }
 .list{
 	background:#ddd;
+	width: 280px;
 	text-align: left;
+	margin-top: 0px;
 }
-.list_l{
-	float:left;
+.list_s{
+	margin-top: 5px;
+	vertical-align:top ;
+}
+
+.more{
+	float: right;
+	text-align: right;
 	margin: auto;
-	margin-left: 0px;
-	background:#ddd;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	width:960px;
 }
 
 /***** 二级页面 *******/
