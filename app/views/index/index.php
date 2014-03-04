@@ -58,4 +58,3 @@
 </div>
 
 <!--main end-->
-<div style="clear:both;"></div>

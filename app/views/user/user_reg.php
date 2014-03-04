@@ -1,12 +1,4 @@
-<?php
-include './comm/title.php';
-
-?>
-
-<div class="navbg" style="display: block;">
-  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;用户注册</div>
-  <div class="navchannel">用户注册</div>
-</div>
+<link type="text/css" href="./css/style.css" rel="stylesheet">
 
 <!--main begin-->
 <div class="main">
@@ -41,11 +33,7 @@ include './comm/title.php';
 	</div>
 </div>
 <!--main end-->
-<div style="clear:both;"></div>
 
-<?php
-  include "./comm/footer.php";
-?>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 $(function(){
@@ -66,7 +54,7 @@ $(function(){
 			return false;
 		}
 		
-		$.post("./user.php?action=check",{name:$('#name').val()},function(data){
+		$.post("./box.php?action=check",{name:$('#name').val()},function(data){
 			//alert(data) ;
 			if(data==0){
 				alert("用户名已被使用，请重新输入") ;

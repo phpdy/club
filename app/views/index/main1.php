@@ -1,8 +1,6 @@
-<?php 
-$t = $_GET['t'] ;
-?>
+
 <div id="mainbody">
-	<div class="topimg"><img src="./images/<?php echo $t;?>01.jpg" width="960" height="440" alt=""></div>
+	<div class="topimg"><img src="./img/<?php echo $t;?>01.jpg" width="960" height="440" alt=""></div>
 	<div id="mainc">
 		<div>
 			<div class="main-left">
@@ -12,7 +10,7 @@ $t = $_GET['t'] ;
 				我们将邀请资深专业摄影师带领富有创作欲望的爱好者，共同探索世界最美的地方，共同分享关于摄影的技巧，洞察力以及对摄影的热情，进一步磨练自己的摄影技巧和艺术眼光。<br/>
 			</div>
 			<div class="main-right">
-				<img src="./images/<?php echo $t;?>02.jpg">
+				<img src="./img/<?php echo $t;?>02.jpg">
 			</div>
 		</div>
 	</div>
@@ -26,13 +24,13 @@ $t = $_GET['t'] ;
 	<div class="mainc_img">
 	<?php for($i=0;$i<4;$i++){?>
 		<ul>
-			<li><img src="./images/img01.jpg"/></li>
+			<li><img src="./img/img01.jpg"/></li>
 			<li>&nbsp; photo workshop:london >></li>
 			<li>&nbsp;</li>
 			<li>&nbsp; 7 Days</li>
 		</ul>
 		<ul>
-			<li><img src="./images/img02.jpg"/></li>
+			<li><img src="./img/img02.jpg"/></li>
 			<li>&nbsp; photo workshop:london >></li>
 			<li>&nbsp;</li>
 			<li>&nbsp; 7 Days</li>
@@ -49,13 +47,13 @@ $t = $_GET['t'] ;
 	<div class="mainc_img">
 	<?php for($i=0;$i<4;$i++){?>
 		<ul>
-			<li><img src="./images/img03.jpg"/></li>
+			<li><img src="./img/img03.jpg"/></li>
 			<li>&nbsp;photo workshop:london >></li>
 			<li>&nbsp;</li>
 			<li>&nbsp;7 Days</li>
 		</ul>
 		<ul>
-			<li><img src="./images/img04.jpg"/></li>
+			<li><img src="./img/img04.jpg"/></li>
 			<li>&nbsp; photo workshop:london >></li>
 			<li>&nbsp;</li>
 			<li>&nbsp; 7 Days</li>

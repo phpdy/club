@@ -20,6 +20,14 @@ class View extends Object {
 		extract ( $this->_vars );
 		include $tplfile;
 	}
+	function display2($file,$dir='') {
+		$tplfile = VIEW_PATH. DS.(strlen($dir)>0 ? $dir.DS : '')  . $file;
+		if (! is_file ( $tplfile )) {
+			trigger_error ( 'template file ' . $tplfile . ' not exists!', E_USER_ERROR );
+		}
+		extract ( $this->_vars );
+		include $tplfile;
+	}
 }
 
 ?>

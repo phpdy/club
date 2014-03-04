@@ -1,15 +1,8 @@
-<?php
-include './comm/title.php';
-?>
-<script language="javascript" type="text/javascript" src="js/common.js" ></script>
-
-<div class="navbg" style="display: block;">
-  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;用户中心&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;密码修改</div>
-  <div class="navchannel">密码修改</div>
-</div>
+<link type="text/css" href="./css/style.css" rel="stylesheet">
 
 <!--main begin-->
 <div class="main">
+<div class="apply_sub"></div>
 <?php
 include './comm/user_left.php';
 ?>
@@ -32,11 +25,8 @@ include './comm/user_left.php';
 	</div>
 </div>
 <!--main end-->
-<div style="clear:both;"></div>
 
-<?php
-  include "./comm/footer.php";
-?>
+
 <script language="javascript" type="text/javascript" src="js/Calendar3.js" ></script>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
@@ -51,7 +41,7 @@ $(function(){
 			return false ;
 		}
 
-		$.post("./user.php?action=checkpwd",{id:$('#id').val(),password:$('#oldpassword').val()},function(data){
+		$.post("./box.php?action=checkpwd",{id:$('#id').val(),password:$('#oldpassword').val()},function(data){
 			//alert(data) ;
 			if(data==0){
 				alert("旧密码错误，请重新输入。") ;
@@ -96,7 +86,7 @@ $(function(){
 				return false ;
 			}
 
-			$.post("./user.php?action=pwdSubmit",{id:$('#id').val(),password:$('#password').val()},function(data){
+			$.post("./box.php?action=pwdSubmit",{id:$('#id').val(),password:$('#password').val()},function(data){
 				//alert(data) ;
 				if(data==1){
 					alert("密码修改成功。") ;

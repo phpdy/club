@@ -4,6 +4,12 @@ class user_index extends BaseController {
 
 	public function init(){
 		$this->userinfo_model = $this->initModel('userinfo_model');
+		
+		$this->view->assign('t',5) ;
+		$this->view->display2('title.php','comm');
+	}
+	public function destroy(){
+		$this->view->display2('footer.php','comm');
 	}
 	
 	public function defaultAction(){
@@ -13,9 +19,6 @@ class user_index extends BaseController {
 	//登陆
 	public function loginAction(){
 		$this->view->display('user_login.php');
-	}
-	public function boxAction(){
-		$this->view->display('user_login_box.php');
 	}
 	public function loginSubmitAction(){
 		$start = microtime(true)*1000 ;
@@ -114,65 +117,8 @@ class user_index extends BaseController {
 		$this->view->assign('user',$user) ;
 		$this->view->display('user_pwd.php');
 	}
-	public function pwdSubmitAction(){
-		$start = microtime(true)*1000 ;
-		$log = __CLASS__."|".__FUNCTION__ ;
-		
-		$_POST['password'] = md5($_POST['password']) ;
-		$result = $this->userinfo_model->update($_POST) ;
-		echo $result ;
-//		$url = FinalClass::$_home_url ;
-//		if(!empty($_POST['url'])){
-//			$url = $_POST['url'] ;
-//		}
-//		header("location:$url") ;
-		
-		$log .= "|$result|$url" ;
-		$log .= "|".(int)(microtime(true)*1000-$start) ;
-		Log::logBusiness($log) ;
-	}
 	
-	//用户名检验
-	public function checkAction(){
-		$start = microtime(true)*1000 ;
-		$log = __CLASS__."|".__FUNCTION__ ;
-		
-		$name = $_POST['name'] ;
-		$result = $this->userinfo_model->query(array('name'=>$name)) ;
-//		print_r($result) ;
-
-		$log .= "|$name|".sizeof($result) ;
-		$log .= "|".(int)(microtime(true)*1000-$start) ;
-		Log::logBusiness($log) ;
-		
-		if(empty($result) || sizeof($result)==0){
-			echo 1 ;
-		} else {
-			echo 0 ;
-		}
-	}
-	//密码检验
-	public function checkpwdAction(){
-		$start = microtime(true)*1000 ;
-		$log = __CLASS__."|".__FUNCTION__ ;
-		
-		$password = md5($_POST['password']) ;
-		
-		@session_start ();
-		$user = $_SESSION[FinalClass::$_session_user] ;
-
-		$log .= "|$password|" ;
-		$log .= "|".(int)(microtime(true)*1000-$start) ;
-		Log::logBusiness($log) ;
-		
-//		echo "$password  ". $user['password'] ;
-		if($password == $user['password']){
-			echo 1 ;
-		} else {
-			echo 0 ;
-		}
-	}
-
+	//退出
 	public function loginoutAction(){
 		@session_start ();
 		$_SESSION [FinalClass::$_session_user] = null ;

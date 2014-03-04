@@ -1,15 +1,11 @@
-<?php
-include './comm/title.php';
-?>
-<script language="javascript" type="text/javascript" src="js/common.js" ></script>
+<link type="text/css" href="./css/style.css" rel="stylesheet">
 
 <div class="navbg" style="display: block;">
-  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;用户中心&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;用户信息修改</div>
-  <div class="navchannel">用户信息完善</div>
+  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;我要报名&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;在线报名</div>
 </div>
-
 <!--main begin-->
 <div class="main">
+<div class="apply_sub"></div>
 <?php
 include './comm/user_left.php';
 ?>
@@ -56,11 +52,7 @@ include './comm/user_left.php';
 	</div>
 </div>
 <!--main end-->
-<div style="clear:both;"></div>
 
-<?php
-  include "./comm/footer.php";
-?>
 <script language="javascript" type="text/javascript" src="js/Calendar3.js" ></script>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
