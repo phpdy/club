@@ -31,5 +31,5 @@ $action .= "Action" ;
 //加载控制层
 $class = Import::importController($control,$dir);
 $class->$action() ;
-
+$class->destroy() ;
 ?>

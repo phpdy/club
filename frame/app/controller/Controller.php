@@ -36,6 +36,10 @@ class Controller extends Object {
 		$dir = empty($dir)?$this->dir:$dir ;
 		return Import::importModel($model,$dir) ;
 	}
+	
+	public function destroy(){
+		
+	}
 }
 
 ?>
