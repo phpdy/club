@@ -2,7 +2,7 @@
 
 <!--main begin-->
 <div class="main">
-<div class="apply_sub"></div>
+<div class="apply_sub">密码修改</div>
 <?php
 include './comm/user_left.php';
 ?>
@@ -25,7 +25,6 @@ include './comm/user_left.php';
 	</div>
 </div>
 <!--main end-->
-
 
 <script language="javascript" type="text/javascript" src="js/Calendar3.js" ></script>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>

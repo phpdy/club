@@ -4,7 +4,7 @@
 
 function box(){
 	//alert(123) ;
-	url = "/login.php?action=box" ;
+	url = "/box.php" ;
 	window.showModalDialog(url,"","dialogHeight=400px;dialogWidth=520px;center=yes;help=no;resizable=no;scroll=no;status=no;edge:raised") ;
 	
 }

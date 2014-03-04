@@ -1,11 +1,8 @@
 <link type="text/css" href="./css/style.css" rel="stylesheet">
 
-<div class="navbg" style="display: block;">
-  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;我要报名&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;在线报名</div>
-</div>
 <!--main begin-->
 <div class="main">
-<div class="apply_sub"></div>
+<div class="apply_sub">用户信息</div>
 <?php
 include './comm/user_left.php';
 ?>
