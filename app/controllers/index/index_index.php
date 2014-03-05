@@ -38,13 +38,28 @@ class index_index extends BaseController {
 				$this->view->display('news.php');
 				break ;
 			case 4:
-				header("location: ours.php") ;
+				header("location: ours.php?t=$t") ;
 				break ;
 			case 5:
 				header("location: reg.php") ;
 				break ;
-			
 		}
+	}
+	
+	public function oursAction(){
+		$t = 3 ;
+		$this->view->assign('bigimg',"/img/{$t}01.jpg") ;
+		
+		$hd = array(
+			'title'	=>	'跟顶级摄影师到最美的地方学习摄影',
+			'info'	=>	"将邀请资深专业摄影师带领富有创作欲望的爱好者，共同探索世界最美的地方，共同分享关于摄影的技巧，洞察力以及对摄影的热情，进一步磨练自己的摄影技巧和艺术眼光。<br/>",
+			'img'	=>	"/img/{$t}02.jpg",
+		) ;
+		$this->view->assign('hd',$hd) ;
+		
+		$list = $this->index_model->getNewsList($t) ;
+		$this->view->assign('list',$list) ;
+		$this->view->display('ours.php');
 	}
 
 	
