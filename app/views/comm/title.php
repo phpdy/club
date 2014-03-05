@@ -24,13 +24,13 @@
   @session_start ();
   $userinfo = @$_SESSION [FinalClass::$_session_user] ;
   if(empty($userinfo)){
-  	echo '<a href="login.php">[登录]</a>-<a href="reg.php">[注册]</a>' ;
+  	echo '<a href="login.php">登录</a>|<a href="reg.php">注册</a>' ;
   } else {
   	$username = $userinfo['username'] ;
   	if(empty($username)){
   		$username = $userinfo['name'] ;
   	}
-  	echo "<a href=\"login.php\">[$username]</a>-<a href=\"login.php?action=loginout\">[退出]</a>" ;
+  	echo "<a href=\"login.php\">$username</a>|<a href=\"login.php?action=loginout\">退出</a>" ;
   }
   ?>
 	</span>
