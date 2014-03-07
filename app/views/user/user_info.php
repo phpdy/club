@@ -29,19 +29,18 @@ include './comm/user_left.php';
 			</select></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>证件号码：<input type="text" class="sele" size="50" maxlength="18" name="paperno" id="paperno" value="<?php echo $user['paperno']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>所在单位：<input type="text" class="sele" size="50" maxlength="50" name="company" value="<?php echo $user['company']; ?>"></div>
-        <div class="apply_t1"><b style="color:#F00;">*</b>公司职务：<input type="text" class="sele" size="50" maxlength="50" name="job" value="<?php echo $user['job']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="apply_t1"><b style="color:#F00;">*</b>公司职务：<input type="text" class="sele" size="50" maxlength="50" name="job" value="<?php echo $user['job']; ?>"></div>
         <div class="apply_t1">
         	<b style="color:#F00;">*</b>所在省：<select name="province" id="s1" class="sele"><option></option></select>
 	        <b style="color:#F00;">*</b>市：<select name="city" id="s2" class="sele"><option></option></select>
 	        <SCRIPT language="javascript">setup()</SCRIPT></div>
-	    <div class="apply_t1"><b style="color:#F00;">*</b>通讯地址：<input type="text" class="sele" size="50" maxlength="100" name="address" value="<?php echo $user['address']; ?>">
+	    <div class="apply_t1"><b style="color:#F00;">*</b>通讯地址：<input type="text" class="sele" size="50" maxlength="100" name="address" value="<?php echo $user['address']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>邮政编码：<input type="text" class="sele" size="20" maxlength="20" name="post" value="<?php echo $user['post']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>移动电话：<input type="text" class="sele" size="15" maxlength="15" name="mobile" value="<?php echo $user['mobile']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
         	备用电话：<input type="text" class="sele" size="15" maxlength="15" name="phone" value="<?php echo $user['phone']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>电子邮件：<input type="text" class="sele" size="50" maxlength="100" name="email" value="<?php echo $user['email']; ?>"></div>
       </div>
       <div class="apply_next">
-        <input type="hidden" tabindex="4" name="step" value="1">
         <input type="button" class="btn-img btn-regist" id="infosubmit" value="提交修改" tabindex="5" onclick="return btn()">
       </div>
     </form>
@@ -50,6 +49,7 @@ include './comm/user_left.php';
 </div>
 <!--main end-->
 
+<script language="javascript" type="text/javascript" src="js/common.js" ></script>
 <script language="javascript" type="text/javascript" src="js/Calendar3.js" ></script>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">

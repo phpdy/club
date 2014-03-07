@@ -44,7 +44,7 @@ $(function(){
 				return false ;
 			}
 			<?php 
-			$url = $_REQUEST['url'] ;
+			$url = @$_REQUEST['url'] ;
 			if(empty($url)){
 				$url = FinalClass::$_home_url ;
 			}

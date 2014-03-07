@@ -5,6 +5,12 @@ class pay_index extends BaseController {
 	public function init(){
 		$this->userinfo_model = $this->initModel('userinfo_model','user');
 		$this->pay_model = $this->initModel('pay_model');
+		
+		$this->view->assign('t',5) ;
+		$this->view->display2('title.php','comm');
+	}
+	public function destroy(){
+		$this->view->display2('footer.php','comm');
 	}
 	
 	public function defaultAction(){
@@ -17,7 +23,7 @@ class pay_index extends BaseController {
 			die() ;
 		}
 		
-		$typeid = $_GET['typeid'] ;
+		$typeid = empty($_GET['typeid'])?0:$_GET['typeid'] ;
 		$this->view->assign('typeid',$typeid) ;
 		$this->view->assign('user',$user) ;
 		

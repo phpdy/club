@@ -1,15 +1,9 @@
-<?php
-include './comm/title.php';
-?>
+<link type="text/css" href="./css/style.css" rel="stylesheet">
 <script language="javascript" type="text/javascript" src="js/common.js" ></script>
-
-<div class="navbg" style="display: block;">
-  <div class="navlist"><a href="http://www.newshootedu.com/">首页</a>&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;我要报名&nbsp;&nbsp;<img src="/images/nav-breadcrumb.png" border="0" width="6" height="12" align=absmiddle>&nbsp;&nbsp;在线报名</div>
-  <div class="navchannel">在线报名</div>
-</div>
 
 <!--main begin-->
 <div class="main">
+<div class="apply_sub">请选择支付方式</div>
 <?php
 include './comm/user_left.php';
 ?>
@@ -17,7 +11,6 @@ include './comm/user_left.php';
 	<div class="rmain">
 	<div class="jpk">
     <form name="myForm" id="myForm" method="post" action="user.php?action=infoSubmit">
-		<div class="apply_sub">请选择支付方式</div>
     	<div class="apply_desc"><p>欢迎您参加纽摄教育在线学院的学习，提升摄影技艺，开启自己的摄影新航程！你提交报名表之后，可以通过下列方式支付您的学习费用：</p></div>
       	<div class="apply_sheet">
         	<div><img src="./images/paycard.gif" width="408" height="252"></div>
@@ -35,8 +28,3 @@ include './comm/user_left.php';
 	</div>
 </div>
 <!--main end-->
-<div style="clear:both;"></div>
-
-<?php
-  include "./comm/footer.php";
-?>

@@ -30,7 +30,7 @@
   	if(empty($username)){
   		$username = $userinfo['name'] ;
   	}
-  	echo "<a href=\"login.php\">$username</a>|<a href=\"login.php?action=loginout\">退出</a>" ;
+  	echo "<a href=\"user.php\">$username</a>|<a href=\"login.php?action=loginout\">退出</a>" ;
   }
   ?>
 	</span>

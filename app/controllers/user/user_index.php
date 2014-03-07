@@ -73,6 +73,7 @@ class user_index extends BaseController {
 		if(!empty($_POST['url'])){
 			$url = $_POST['url'] ;
 		}
+		
 		header("location:$url") ;
 		
 		$log .= "|$result|$url" ;

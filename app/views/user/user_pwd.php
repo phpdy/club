@@ -17,7 +17,6 @@ include './comm/user_left.php';
         <div class="apply_t1"><b style="color:#F00;">*</b>确认密码：<input type="password" tabindex="3" class="sele" size="20" maxlength="20" name="repassword" id="repassword"></div>
       </div>
       <div class="apply_next">
-        <input type="hidden" tabindex="4" name="step" value="1">
         <input type="button" class="btn-img btn-regist" id="pwdsubmit" value="修改密码" tabindex="5" >
       </div>
     </form>

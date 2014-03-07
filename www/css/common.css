@@ -27,7 +27,7 @@ a:hover {
 .topbar {
 	position:absolute;
 	right:5px;
-	top:65px;
+	top:85px;
 	color:#999999;
 	
 }
@@ -58,7 +58,7 @@ a:hover {
 }
 .mainnav li {
 	float:left;
-	margin:0px 40px 0 0;
+	margin:0px 20px 0 0;
 	width:100px;
 	line-height:30px;
 	text-align:center;

@@ -5,7 +5,7 @@ class index_index extends BaseController {
 	public function init(){
 		$this->index_model = $this->initModel('index_model','index');
 		
-		$t = $_GET['t'] ;
+		$t = empty($_GET['t'])?0:$_GET['t'] ;
 		$this->view->assign('t',$t) ;
 		$this->view->display2('title.php','comm');
 	}
@@ -15,7 +15,7 @@ class index_index extends BaseController {
 	}
 	
 	public function defaultAction(){
-		$t = $_GET['t'] ;
+		$t = empty($_GET['t'])?0:$_GET['t'] ;
 		switch ($t){
 			case 0:
 				$this->view->display('index.php');
@@ -41,7 +41,7 @@ class index_index extends BaseController {
 				header("location: ours.php?t=$t") ;
 				break ;
 			case 5:
-				header("location: reg.php") ;
+				header("location: user.php") ;
 				break ;
 		}
 	}

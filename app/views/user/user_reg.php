@@ -26,7 +26,7 @@
         <div class="apply_t1"><input id="instruction" type="checkbox" checked="checked" value=1 tabindex="2"><b style="color:#F00;">*</b>我已经阅读并接受学员须知（如果您未满18岁，需要您的父母或者监护人同意）。</div>
         </div>
 		<div class="apply_next">
-	        <input type="hidden" name="url" value="<?php echo $_REQUEST['url'] ;?>">
+	        <input type="hidden" name="url" value="<?php echo @$_REQUEST['url'] ;?>">
 	        <input type="reset" name="chongxie" class="btn-img btn-regist" value="重新填写" />&nbsp;&nbsp;<input type="button" class="btn-img btn-regist" id="registsubmit" value="注册" tabindex="5" onclick="return btn()">
 		</div>
     </form>
