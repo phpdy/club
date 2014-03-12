@@ -1,7 +1,7 @@
 <?php
 //
 class index_model extends BaseModel {
-	protected $dbIndex = 'admin';
+	protected $dbIndex = 'phpcms';
 	protected $dbTable = "userinfo" ;
 	
 	protected $items = array('name','times','info','imgurl') ;
@@ -11,30 +11,25 @@ class index_model extends BaseModel {
 		return "order by id " ;
 	}
 	
-	public function getNewsList($typeid){
-		$item = array() ;
-		for($i=0;$i<8;$i++){
-			$t = $i%4+1 ;
-			$item[] = array(
-				'id'	=>	$i ,
-				'imgurl'	=>	"/img/img0{$t}.jpg" ,
-				'info'		=>	'photo workshop:london' ,
-				'times'		=>	'7 Days' ,
-			) ;
-		}
-		$newlist['活动预告'] = $item ;
+	public function getNewsList($pid){
 		
-		$item = array() ;
-		for($i=0;$i<6;$i++){
-			$t = $i%4+1 ;
-			$item[] = array(
-				'id'	=>	$i ,
-				'imgurl'	=>	"/img/img0{$t}.jpg" ,
-				'info'		=>	'photo workshop:london' ,
-				'times'		=>	'7 Days' ,
+		$sql = "select id,catid,title,thumb,description,url,inputtime from v9_club where catid=$pid order by inputtime desc" ;
+		$result = $this->getAll($sql) ;
+		
+		$now = time() ;
+		foreach ($result as $item){
+			$time = $item['inputtime'] ;
+			
+			$newItem = array(
+				'id'		=>	$item['id'] ,
+				'imgurl'	=>	$item['thumb'] ,
+				'title'		=>	$item['title'] ,
+				'desc'		=>	$item['description'] ,
+				'time'		=>	$time ,
+				'date'		=>	date('Y-m-d ',$time) ,
 			) ;
+			$newlist[] = $newItem ;
 		}
-		$newlist['活动回顾'] = $item ;
 		
 		return $newlist ;
 	}

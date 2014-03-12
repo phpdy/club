@@ -16,6 +16,7 @@
 </div>
 
 <?php 
+
 foreach ($list as $title=>$newslist){
 	?>
 	<div id="mainbody2">
@@ -27,11 +28,11 @@ foreach ($list as $title=>$newslist){
 			foreach ($newslist as $news){
 				$id		= $news['id'] ;
 				$imgurl	= $news['imgurl'] ;
-				$info 	= $news['info'] ;
-				$times 	= $news['times'] ;
+				$info 	= $news['title'] ;
+				$times 	= $news['date'] ;
 				?>
 				<ul>
-					<li><img src="<?php echo $imgurl ;?>"/></li>
+					<li><img src="<?php echo $imgurl ;?>" width=230 /></li>
 					<li>&nbsp; <?php echo $info ;?> >></li>
 					<li>&nbsp;</li>
 					<li>&nbsp; <?php echo $times ;?></li>
