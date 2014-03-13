@@ -25,7 +25,7 @@ class index_index extends BaseController {
 			case 2:
 			case 3:
 				$this->getData($t) ;
-				$this->view->display('news.php');
+				$this->view->display('list.php');
 				break ;
 			case 4:
 				header("location: ours.php?t=$t") ;
@@ -109,21 +109,21 @@ class index_index extends BaseController {
 	}
 	
 	public function oursAction(){
-		$t = 3 ;
-		$this->view->assign('bigimg',"/img/{$t}01.jpg") ;
+		$list = $this->index_model->getNewsList(50) ;
 		
-		$hd = array(
-			'title'	=>	'跟顶级摄影师到最美的地方学习摄影',
-			'info'	=>	"将邀请资深专业摄影师带领富有创作欲望的爱好者，共同探索世界最美的地方，共同分享关于摄影的技巧，洞察力以及对摄影的热情，进一步磨练自己的摄影技巧和艺术眼光。<br/>",
-			'img'	=>	"/img/{$t}02.jpg",
-		) ;
-		$this->view->assign('hd',$hd) ;
-		
-		$list = $this->index_model->getNewsList($t) ;
-		$this->view->assign('list',$list) ;
+		if(sizeof($list)==1){
+			$result = $this->index_model->getNewsContent($list[0]['id']) ;
+			$this->view->assign('result',$result) ;
+			
+		}
 		$this->view->display('ours.php');
 	}
 
+	public function newsAction(){
+		$result = $this->index_model->getNewsContent($_GET['id']) ;
+		$this->view->assign('result',$result) ;
+		$this->view->display('news.php');
+	}
 	
 }
 ?>

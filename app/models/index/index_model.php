@@ -16,10 +16,8 @@ class index_model extends BaseModel {
 		$sql = "select id,catid,title,thumb,description,url,inputtime from v9_club where catid=$pid order by inputtime desc" ;
 		$result = $this->getAll($sql) ;
 		
-		$now = time() ;
 		foreach ($result as $item){
 			$time = $item['inputtime'] ;
-			
 			$newItem = array(
 				'id'		=>	$item['id'] ,
 				'imgurl'	=>	$item['thumb'] ,
@@ -32,6 +30,13 @@ class index_model extends BaseModel {
 		}
 		
 		return $newlist ;
+	}
+	
+	public function getNewsContent($id){
+		$sql = "select id,content from v9_club_data where id=$id" ;
+		$result = $this->getOne($sql) ;
+		
+		return $result ;
 	}
 }
 

@@ -10,8 +10,10 @@
 		<div class="fenlei">
 			<ul>
 				<li style="background:#000;color:#fff">
-					<img src="<?php echo $first['imgurl'] ;?>" width="280" />
-					<?php echo $first['desc'] ;?>
+					<a href="news.php?t=<?php echo $i;?>&id=<?php echo $first['id'];?>">
+					<div><img src="<?php echo $first['imgurl'] ;?>" width="280" /></div>
+					<div class="desc"><?php echo $first['desc'] ;?></div>
+					</a>
 				</li>
 				
 				<?php 
@@ -20,8 +22,10 @@
 				?>
 				<li>
 					<div class="list">
-						<span class="list_s"><img src="<?php echo $club['imgurl'] ;?>" width=126 /></span>
-						<span class="list_s"><?php echo $club['desc'] ;?></span>
+						<a href="news.php?t=<?php echo $i;?>&id=<?php echo $club['id'];?>">
+						<div class="list_img"><img src="<?php echo $club['imgurl'] ;?>" width=126 /></div>
+						<div class="list_text"><?php echo $club['desc'] ;?></div>
+						</a>
 					</div>
 				</li>
 				<?php }?>
@@ -38,22 +42,26 @@
 	<hr>
 	<div class="mainc_img">
 	<?php foreach ($list[4] as $item){?>
+		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
 		<ul>
-			<li><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
-			<li>&nbsp; <?php echo $item['desc'] ;?></li>
+			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
+			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
 			<li>&nbsp;</li>
 		</ul>
+		</a>
 	<?php }?>
 	</div>
 	<div class="more"><b>更多摄影作品展示</b>></div>
 	
 	<div class="mainc_img">
 	<?php foreach ($list[5] as $item){?>
+		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
 		<ul>
-			<li><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
-			<li>&nbsp; <?php echo $item['desc'] ;?></li>
+			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
+			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
 			<li>&nbsp;</li>
 		</ul>
+		</a>
 	<?php }?>
 	</div>
 	<div class="more"><b>更多过往活动花絮</b>></div>
