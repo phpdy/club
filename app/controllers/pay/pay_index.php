@@ -7,6 +7,16 @@ class pay_index extends BaseController {
 		$this->pay_model = $this->initModel('pay_model');
 		
 		$this->view->assign('t',5) ;
+		
+		$title = array(
+			0	=> '首页' ,
+			1	=> '摄影之旅' ,
+			2	=> '摄影课程' ,
+			3	=> '公益活动' ,
+			4	=> '关于我们' ,
+			5	=> '会员中心' ,
+		) ;
+		$this->view->assign('title',$title) ;
 		$this->view->display2('title.php','comm');
 	}
 	public function destroy(){

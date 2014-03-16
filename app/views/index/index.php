@@ -4,29 +4,29 @@
 	<div id="mainc">
 		<?php 
 		for($i=1;$i<=3;$i++){
-			$item = $list[$i] ;
+			$item = @$list[$i] ;
 			$first = $item[0] ;
 		?>
 		<div class="fenlei">
 			<ul>
+				<a href="news.php?t=<?php echo $i;?>&id=<?php echo $first['id'];?>">
 				<li style="background:#000;color:#fff">
-					<a href="news.php?t=<?php echo $i;?>&id=<?php echo $first['id'];?>">
-					<div><img src="<?php echo $first['imgurl'] ;?>" width="280" /></div>
-					<div class="desc"><?php echo $first['desc'] ;?></div>
-					</a>
+					<div class="tj_img"><img src="<?php echo $first['imgurl'] ;?>"/></div>
+					<div class="tj_desc"><?php echo $first['desc'] ;?></div>
 				</li>
+				</a>
 				
 				<?php 
 				for($h=1;$h<=3 && $h<sizeof($item);$h++){
 					$club = $item[$h] ;
 				?>
 				<li>
+					<a href="news.php?t=<?php echo $i;?>&id=<?php echo $club['id'];?>">
 					<div class="list">
-						<a href="news.php?t=<?php echo $i;?>&id=<?php echo $club['id'];?>">
-						<div class="list_img"><img src="<?php echo $club['imgurl'] ;?>" width=126 /></div>
+						<div class="list_img"><img src="<?php echo $club['imgurl'] ;?>"/></div>
 						<div class="list_text"><?php echo $club['desc'] ;?></div>
-						</a>
 					</div>
+					</a>
 				</li>
 				<?php }?>
 			</ul>

@@ -86,7 +86,13 @@ a:hover {
 	margin-bottom: 20px;
 	background:#ddd;
 }
-.desc{
+.tj_img img{
+	margin:0px;
+	padding:0px;
+	width: 280px;
+	height: 180px;
+}
+.tj_desc{
 	height: 50px;
 	text-align: left;
 	margin:5px;
@@ -99,11 +105,12 @@ a:hover {
 	width: 280px;
 	height: 80px;
 }
-.list_img{
+.list_img img{
 	margin:0px;
 	padding:0px;
 	float: left;
 	width: 126px;
+	height: 80px;
 }
 .list_text{
 	margin:2px;
@@ -154,9 +161,9 @@ a:hover {
 	width:550px;
 	margin:auto;
 	margin-left: 20px;
-	margin-right: 20px;
+	margin-right: 10px;
 	text-align: left;
-	font-size:18px;
+	font-size:15px;
 }
 .main-right{
 	float:left;
@@ -195,13 +202,37 @@ a:hover {
 	margin:0px 10px 20px 0px;
 	width:230px;
 }
-.shey_img{
+.shey_img img{
 	width:230px;
+	height:150px;
 }
 .shey_txt{
 	margin:5px 5px 5px 10px;
 	height:30px;
 	color: #000;
+}
+
+/***详情页***/
+.main_new {
+	position:relative;
+	width:960px;
+	align:center;
+	margin: auto;
+	margin-bottom:20px;
+	text-align:left
+}
+.main_new_nav{
+	position:relative;
+	width:100%;
+	margin:0px;
+	padding-left: 20px;
+	padding-top: 5px;
+	background:#ddd;
+	height:25px;
+	text-align:left;
+	font-size:14px;
+	margin-bottom:20px;
+	color:#000;
 }
 /***尾部***/
 .ifooter {
