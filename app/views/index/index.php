@@ -1,6 +1,14 @@
 <!--main begin-->
 <div id="mainbody">
-	<div class="topimg"><img src="./img/001.jpg" width="960" height="600" alt=""></div>
+	<div class="topimg">
+		<div class="djimg" style="background: url(./img/0001.jpg);">
+			<div class="djimg_text">
+				<div class="djimg_title">2014年3月14日-16日雪花纯生古建摄影大赛专业外拍--西双版纳</div>
+				<div class="djimg_info">“彩云之南，我新的方向，孔雀飞去......”3月的云南温暖宜人，让我们沿着茶马古道的青石路探访群山环绕的碧溪古镇，
+				漫步在万亩茶园中品味普洱茶沧桑的历史，随着傣族少女走进凤尾竹掩映的竹楼，佛院，拍摄那神奇美丽的西双版纳</div>
+			</div>
+		</div>
+	</div>
 	<div id="mainc">
 		<?php 
 		for($i=1;$i<=3;$i++){

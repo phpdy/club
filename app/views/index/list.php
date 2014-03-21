@@ -1,6 +1,8 @@
 
 <div id="mainbody">
-	<div class="topimg"><img src="<?php echo $bigimg; ?>" width="960" height="440" alt=""></div>
+	<div class="topimg">
+		<div class="topimg_text" style="background: url(<?php echo $hd['bigimg']; ?>)"><?php echo $hd['text']; ?></div>
+	</div>
 	<div id="mainc">
 		<div>
 			<div class="main-left">

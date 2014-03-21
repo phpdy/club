@@ -70,11 +70,14 @@ class index_index extends BaseController {
 	 * @param unknown_type $t
 	 */
 	private function getData($t){
+		
+		$title_before ="";
+		$title_after ="" ;
 		switch ($t){
 			case 1:
 				$id = 47 ;
-				$this->view->assign('bigimg',"/img/{$t}01.jpg") ;
 				$hd = array(
+					'text'	=>	'Photography Trips and Workshops',
 					'title'	=>	'跟顶级摄影师到最美的地方学习摄影',
 					'info'	=>	
 					"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纽摄俱乐部自2006年起在中国、柬埔寨、尼泊尔、斯里兰卡、土耳其、美国、加拿大、丹麦、瑞典、挪威等地举办各种摄影实践及创作活动。让你在世界上最美的地方和专业的摄影师学习专业的技巧和技术。<br>"
@@ -83,11 +86,13 @@ class index_index extends BaseController {
 					."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也欢迎您参加摄影实践培训。在这类活动中，通常会有2名或以上专业摄影导师随团指导，让你在拍摄那些令人回味的景象的同时磨练自己的摄影技巧，并会每晚进行作品研讨。<br/>",
 					'img'	=>	"/img/{$t}02.jpg",
 				) ;
+				$title_before ="活动预告";
+				$title_after ="活动回顾" ;
 				break ;
 			case 2:
 				$id = 48 ;
-				$this->view->assign('bigimg',"/img/{$t}01.jpg") ;
 				$hd = array(
+					'text'	=>	'Photo Courses',
 					'title'	=>	'专业摄影师带你从入门到精通',
 					'info'	=>	
 					 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的短期面授课程采用互动式教学体系，让学生在较短的时间内获取丰富、系统、实用的摄影知识，循序渐进地快速进入摄影艺术的殿堂。<br>"
@@ -96,11 +101,13 @@ class index_index extends BaseController {
 					."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此外，我们还为职业摄影师提供室内景物及人物摄影用光的相关课程，你将在导师的带领下全面解析影室摄影中常用的灯光设备和布光方法，解密“大片”诞生的全过程。<br/>",
 					'img'	=>	"/img/{$t}02.jpg",
 				) ;
+				$title_before ="课程预告";
+				$title_after ="课程回顾" ;
 				break ;
 			case 3:
 				$id = 49 ;
-				$this->view->assign('bigimg',"/img/{$t}01.jpg") ;
 				$hd = array(
+					'text'	=>	'Public Benefit Activities',
 					'title'	=>	'和我们一起感受摄影的快乐',
 					'info'	=>	
 					 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们期望通过举办“纽摄中国摄影公益大课堂”等各种公益活动更多热爱摄影、热爱生活的人感受到摄影的快乐<br>"
@@ -108,9 +115,12 @@ class index_index extends BaseController {
 					."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此外，我们欢迎所有的摄影师、摄影爱好者、摄影相关机构参与到捐建“摄影希望学校”公益活动中来，给贫困地区的孩子提供帮助，让孩子们能够掌握摄影技能，通过照相机拍摄自己的家乡，记录自己身边的事和身边的人们，甚至让摄影成为自己的职业。让孩子们能够透过镜头感受生活、热爱生活。<br/>",
 					'img'	=>	"/img/{$t}02.jpg",
 				) ;
+				$title_before ="摄影公益大课堂";
+				$title_after ="摄影希望学校" ;
 				break ;
 			
 		}
+		$hd['bigimg'] = "/img/{$t}00.jpg" ;
 		$this->view->assign('hd',$hd) ;
 		$newslist = $this->index_model->getNewsList($id) ;
 	
@@ -118,15 +128,15 @@ class index_index extends BaseController {
 		foreach ($newslist as $item){
 			$time = $item['time'] ;
 			if($time>$now){
-				if(!empty($list['活动预告']) && sizeof($list['活动预告'])==4){
+				if(!empty($list[$title_before]) && sizeof($list[$title_before])==4){
 					continue ;
 				}
-				$list['活动预告'][] = $item ;
+				$list[$title_before][] = $item ;
 			} else {
-				if(!empty($list['历史回顾']) && sizeof($list['历史回顾'])==4){
+				if(!empty($list[$title_after]) && sizeof($list[$title_after])==4){
 					continue ;
 				}
-				$list['历史回顾'][] = $item ;
+				$list[$title_after][] = $item ;
 			}
 		}
 		$this->view->assign('list',$list) ;
