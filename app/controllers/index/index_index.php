@@ -57,8 +57,8 @@ class index_index extends BaseController {
 			1	=>	$club47 ,
 			2	=>	$club48 ,
 			3	=>	$club49 ,
-			4	=>	$club51 ,
-			5	=>	$club52 ,
+			4	=>	array_slice($club51,0,4) ,
+			5	=>	array_slice($club52,0,4) ,
 		) ;
 		$this->view->assign('list',$list) ;
 	}
@@ -154,6 +154,7 @@ class index_index extends BaseController {
 	}
 
 	public function newsAction(){
+		$this->view->assign('id',$_GET['id']) ;
 		$news = $this->index_model->getNewsByid($_GET['id']) ;
 		$this->view->assign('news',$news) ;
 		

@@ -52,7 +52,7 @@
 	<?php foreach ($list[4] as $item){?>
 		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
 		<ul>
-			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
+			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>"/></li>
 			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
 			<li>&nbsp;</li>
 		</ul>
@@ -65,7 +65,7 @@
 	<?php foreach ($list[5] as $item){?>
 		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
 		<ul>
-			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>" width=230/></li>
+			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>"/></li>
 			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
 			<li>&nbsp;</li>
 		</ul>

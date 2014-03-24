@@ -35,7 +35,7 @@ foreach ($list as $title=>$newslist){
 				?>
 				<ul>
 					<a href="news.php?t=<?php echo $t;?>&id=<?php echo $id;?>">
-					<li class="shey_img"><img src="<?php echo $imgurl ;?>" width=230 /></li>
+					<li class="shey_img"><img src="<?php echo $imgurl ;?>" /></li>
 					<li class="shey_txt"><?php echo $info ;?> >></li>
 					</a>
 					<li>&nbsp; <?php echo $times ;?></li>
