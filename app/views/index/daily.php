@@ -26,6 +26,9 @@ date_default_timezone_set("Asia/Shanghai");
 //$today = time();
 $startdate = strtotime($news['startdate']);
 $closedate = strtotime($news['closedate']);
+if(empty($startdate)){
+	$startdate = time();
+}
 $year =@ $_GET["year"];
 $month = @$_GET["month"];
 
