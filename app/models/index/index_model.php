@@ -13,7 +13,7 @@ class index_model extends BaseModel {
 	
 	public function getNewsList($pid){
 		
-		$sql = "select id,catid,title,thumb,description,url,inputtime from v9_club where catid=$pid order by inputtime desc" ;
+		$sql = "select id,catid,title,thumb,description,url,startdate,closedate from v9_club where catid=$pid order by inputtime desc" ;
 		$result = $this->getAll($sql) ;
 		
 		foreach ($result as $item){
@@ -23,6 +23,8 @@ class index_model extends BaseModel {
 				'imgurl'	=>	$item['thumb'] ,
 				'title'		=>	$item['title'] ,
 				'desc'		=>	$item['description'] ,
+				'startdate'	=>	$item['startdate'] ,
+				'closedate'	=>	$item['closedate'] ,
 				'time'		=>	$time ,
 				'date'		=>	date('Y-m-d ',$time) ,
 			) ;
@@ -33,7 +35,7 @@ class index_model extends BaseModel {
 	}
 
 	public function getNewsByid($id){
-		$sql = "select id,catid,title,thumb,description,url,inputtime from v9_club where id=$id" ;
+		$sql = "select id,catid,title,thumb,description,url,inputtime,startdate,closedate from v9_club where id=$id" ;
 		$result = $this->getOne($sql) ;
 		
 		return $result ;

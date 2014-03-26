@@ -126,7 +126,7 @@ class index_index extends BaseController {
 	
 		$now = time() ;
 		foreach ($newslist as $item){
-			$time = $item['time'] ;
+			$time = strtotime($item['startdate']) ;
 			if($time>$now){
 				if(!empty($list[$title_before]) && sizeof($list[$title_before])==4){
 					continue ;

@@ -23,11 +23,14 @@ border:   #198281 solid 1px;
 
 <?php
 date_default_timezone_set("Asia/Shanghai");
-$today = time();
+//$today = time();
+$startdate = strtotime($news['startdate']);
+$closedate = strtotime($news['closedate']);
 $year =@ $_GET["year"];
 $month = @$_GET["month"];
-if($year=='') $year = date("Y",$today);
-if($month=='') $month = date("m",$today);
+
+if($year=='') $year = date("Y",$startdate);
+if($month=='') $month = date("m",$startdate);
 if((int)$month==0){$year-=1;$month=12;}
 $time = mktime(0,0,0,$month,1,$year);
 $year = date('Y',$time);
@@ -66,18 +69,24 @@ $cd = 1;
 for($i=0;$i<$rows;$i++){
 echo "<tr>";
     for($j=0;$j<7;$j++){
-     echo "<td>";
-     if($cd >= $fstdw && $cd<$days+$fstdw){
-        $oday = $cd-$fstdw+1;
-        if($oday==date('d',time())){
-        	echo "<b><u>";
-        }
-        echo ($cd-$fstdw+1);
-     }else{
-        echo " ";
-     }
-     $cd++;
-     echo "</td>";
+    	$css = "" ;
+    	$date = " " ;
+
+    	if($cd >= $fstdw && $cd<$days+$fstdw){
+    		$oday = $cd-$fstdw+1;
+    		if($year==date('Y',time()) && $month==date('m',time()) && $oday==date('d',time())){
+    			$css .= "background:#888;" ;
+    		}
+    		$date = ($cd-$fstdw+1);
+    	}
+
+    	$today = strtotime("$year-$month-$date") ;
+    	if($today>=$startdate && $today<=$closedate){
+    		$css .= "font-weight:bold;color:red;" ;
+    	}
+    	$cd++;
+    	$out ="<td style='$css'>$date</td>";
+    	echo $out ;
     }
 echo "</tr>";
 }

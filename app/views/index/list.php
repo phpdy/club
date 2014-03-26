@@ -31,7 +31,7 @@ foreach ($list as $title=>$newslist){
 				$id		= $news['id'] ;
 				$imgurl	= $news['imgurl'] ;
 				$info 	= $news['title'] ;
-				$times 	= $news['date'] ;
+				$times 	= $news['startdate'] ;
 				?>
 				<ul>
 					<a href="news.php?t=<?php echo $t;?>&id=<?php echo $id;?>">

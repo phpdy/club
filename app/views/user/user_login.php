@@ -25,7 +25,7 @@
 <script type="text/javascript">
 $(function(){
 	$("#regist").click(function(){
-		alert(1) ;
+		//alert(1) ;
 		document.location.href="reg.php" ;
 	});
 	

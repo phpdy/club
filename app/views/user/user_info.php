@@ -1,5 +1,6 @@
 <link type="text/css" href="./css/style.css" rel="stylesheet">
 
+<script language="javascript" type="text/javascript" src="js/common.js" ></script>
 <!--main begin-->
 <div class="main">
 <div class="apply_sub">用户信息</div>
@@ -49,7 +50,6 @@ include './comm/user_left.php';
 </div>
 <!--main end-->
 
-<script language="javascript" type="text/javascript" src="js/common.js" ></script>
 <script language="javascript" type="text/javascript" src="js/Calendar3.js" ></script>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
