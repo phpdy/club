@@ -1,23 +1,22 @@
 <style type=text/css>
+.daily{
+border-collapse:collapse;
 
-TD{
+border-color:white;
+border:   #198281 solid 1px;
+}
+.title{
+background-color:#9a9a9a;
+color:#FFFFFF;
+font-weight:bold;
+}
+.daily_td{
 text-align:center;
 font-size:16px;
 background-color:#E6E6E6;
 border:   #FFFFFF solid 1px;
 color:#198281;
 height:30px;
-}
-TD.title{
-background-color:#9a9a9a;
-color:#FFFFFF;
-font-weight:bold;
-}
-TABLE{
-border-collapse:collapse;
-
-border-color:white;
-border:   #198281 solid 1px;
 }
 </style>
 
@@ -38,9 +37,9 @@ if((int)$month==0){$year-=1;$month=12;}
 $time = mktime(0,0,0,$month,1,$year);
 $year = date('Y',$time);
 $month = date('m',$time);
-echo "<table width=260 cellspacing=0 cellpadding=0>";
+echo "<table width=260 cellspacing=0 cellpadding=0 class='daily'>";
 
-echo "<tr><td colspan=7 class=title>";
+echo "<tr class='daily_td'><td colspan=7 class=title>";
 $str   = "<a href=?t=$t&id=$id&year=".($year-1)."&month=".$month.">";
 $str .= "&laquo;</a> ".$year."年 ";
 $str .= "<a href=?t=$t&id=$id&year=".($year+1)."&month=".$month.">";
@@ -53,13 +52,13 @@ echo $str;
 echo "</td></tr>";
 
 echo     "<tr>";
-$str   = "<td>一</td>";
-$str .= "<td>二</td>";
-$str .= "<td>三</td>";
-$str .= "<td>四</td>";
-$str .= "<td>五</td>";
-$str .= "<td>六</td>";
-$str .= "<td>七</td>";
+$str   = "<td class='daily_td'>一</td>";
+$str .= "<td class='daily_td'>二</td>";
+$str .= "<td class='daily_td'>三</td>";
+$str .= "<td class='daily_td'>四</td>";
+$str .= "<td class='daily_td'>五</td>";
+$str .= "<td class='daily_td'>六</td>";
+$str .= "<td class='daily_td'>七</td>";
 echo $str;
 echo "</td>";
 //这个月有多少天
@@ -85,10 +84,10 @@ echo "<tr>";
 
     	$today = strtotime("$year-$month-$date") ;
     	if($today>=$startdate && $today<=$closedate){
-    		$css .= "font-weight:bold;color:red;" ;
+    		$css .= "font-weight:bold;color:red;background:#f96;" ;
     	}
     	$cd++;
-    	$out ="<td style='$css'>$date</td>";
+    	$out ="<td class='daily_td' style='$css'>$date</td>";
     	echo $out ;
     }
 echo "</tr>";
