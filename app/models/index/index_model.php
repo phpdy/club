@@ -17,7 +17,7 @@ class index_model extends BaseModel {
 		$result = $this->getAll($sql) ;
 		
 		foreach ($result as $item){
-			$time = $item['inputtime'] ;
+//			$time = $item['inputtime'] ;
 			$newItem = array(
 				'id'		=>	$item['id'] ,
 				'imgurl'	=>	$item['thumb'] ,
@@ -25,8 +25,8 @@ class index_model extends BaseModel {
 				'desc'		=>	$item['description'] ,
 				'startdate'	=>	$item['startdate'] ,
 				'closedate'	=>	$item['closedate'] ,
-				'time'		=>	$time ,
-				'date'		=>	date('Y-m-d ',$time) ,
+//				'time'		=>	$time ,
+//				'date'		=>	date('Y-m-d ',$time) ,
 			) ;
 			$newlist[] = $newItem ;
 		}
