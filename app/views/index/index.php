@@ -48,33 +48,53 @@
 <div id="mainc2">
 	<div class="mainc_title">和我们一起探索美妙的摄影世界</div>
 	<hr>
-	<div class="mainc_img">
-	<?php foreach ($list[4] as $item){?>
-		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
-		<ul>
-			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>"/></li>
-			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
-			<li>&nbsp;</li>
-		</ul>
-		</a>
-	<?php }?>
-	</div>
-	<div class="more"><b>更多摄影作品展示</b>></div>
+	<div class="mainc_img" id="img_0"></div>
+	<div class="more" id="more0"><b>更多摄影作品展示</b>></div><input type="hidden" id="p0" name="p0" value=0>
 	
-	<div class="mainc_img">
-	<?php foreach ($list[5] as $item){?>
-		<a href="news.php?t=0&id=<?php echo $item['id'];?>">
-		<ul>
-			<li class="shey_img"><img src="<?php echo $item['imgurl'] ;?>"/></li>
-			<li class="shey_txt"><?php echo $item['desc'] ;?></li>
-			<li>&nbsp;</li>
-		</ul>
-		</a>
-	<?php }?>
-	</div>
-	<div class="more"><b>更多过往活动花絮</b>></div>
+	<div class="mainc_img" id="img_1"></div>
+	<div class="more" id="more1"><b>更多过往活动花絮</b>></div><input type="hidden" id="p1" name="p1" value=0>
 	
 </div>
 </div>
 
 <!--main end-->
+
+<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript">
+$(function(){
+	<?php for($i=0;$i<2;$i++){?>
+	$("#more<?php echo $i;?>").click(function(){
+		var p = $('#p<?php echo $i;?>').val() ;
+		//alert(p) ;
+
+		$.get("./index.php",{action:"more",o:"json", t:<?php echo $i+4;?>, p:p},
+			function(data){
+//			alert(data) ;
+
+			var data = eval("["+data+"]") ;
+			var list = data[0]["list"] ;
+			for(var i=0;i<list.length;i++){
+				var item = list[i] ;
+				html = "<a href='news.php?t=0&id="+item["id"]+"'>"+
+				"<ul><li class='shey_img'><img src='"+item["imgurl"]+"' /></li>"+
+				"<li class='shey_txt'>"+item["desc"]+" >></li>"+
+				"<li>&nbsp;</li>"+
+				"</ul></a>";
+//				alert(html) ;
+				$('#img_<?php echo $i;?>').append(html) ;
+			}
+
+//			if(data[0]["hasmore"]){
+				$('#p<?php echo $i;?>').val(parseInt(p)+1) ;
+//			} else {
+//				$('#more<?php echo $i;?>').hide() ;
+//			}
+			
+		});
+		return true ;
+	});
+	
+	$("#more<?php echo $i;?>").click();
+	<?php }?>
+});
+</script>

@@ -7,21 +7,28 @@ class index_index extends BaseController {
 		
 		$t = empty($_GET['t'])?0:$_GET['t'] ;
 		$this->view->assign('t',$t) ;
+		$o = empty($_GET['o'])?'html':$_GET['o'] ;
 		
-		$title = array(
-			0	=> '首页' ,
-			1	=> '摄影之旅' ,
-			2	=> '摄影课程' ,
-			3	=> '公益活动' ,
-			4	=> '关于我们' ,
-			5	=> '会员中心' ,
-		) ;
-		$this->view->assign('title',$title) ;
-		$this->view->display2('title.php','comm');
+		if($o=='html'){
+			$title = array(
+				0	=> '首页' ,
+				1	=> '摄影之旅' ,
+				2	=> '摄影课程' ,
+				3	=> '公益活动' ,
+				4	=> '关于我们' ,
+				5	=> '会员中心' ,
+			) ;
+			$this->view->assign('title',$title) ;
+			$this->view->display2('title.php','comm');
+		}
 	}
 
 	public function destroy(){
-		$this->view->display2('footer.php','comm');
+		$o = empty($_GET['o'])?'html':$_GET['o'] ;
+		
+		if($o=='html'){
+			$this->view->display2('footer.php','comm');
+		}
 	}
 	
 	public function defaultAction(){
@@ -124,21 +131,20 @@ class index_index extends BaseController {
 		$this->view->assign('hd',$hd) ;
 		$newslist = $this->index_model->getNewsList($id) ;
 	
+		$list = array() ;
 		$now = time() ;
 		foreach ($newslist as $item){
 			$time = strtotime($item['startdate']) ;
 			if($time>$now){
-				if(!empty($list[$title_before]) && sizeof($list[$title_before])==4){
+				if(!empty($list) && sizeof($list)==4){
 					continue ;
 				}
-				$list[$title_before][] = $item ;
-			} else {
-				if(!empty($list[$title_after]) && sizeof($list[$title_after])==4){
-					continue ;
-				}
-				$list[$title_after][] = $item ;
+				$list[] = $item ;
 			}
 		}
+		
+		$this->view->assign('title1',$title_before) ;
+		$this->view->assign('title2',$title_after) ;
 		$this->view->assign('list',$list) ;
 	}
 	
@@ -163,5 +169,50 @@ class index_index extends BaseController {
 		$this->view->display('news.php');
 	}
 	
+	public function moreAction(){
+		$p  = empty($_GET['p'])?0:$_GET['p'] ;
+		$t = $_GET['t'] ;
+		switch ($t){
+			case 1:
+				$id = 47 ;
+				break ;
+			case 2:
+				$id = 48 ;
+				break ;
+			case 3:
+				$id = 49 ;
+				break ;
+			case 4:
+				$id = 51 ;
+				break ;
+			case 5:
+				$id = 52 ;
+				break ;
+		}
+		
+		$list = $this->index_model->getNewsList($id) ;
+//		print_r($list) ;
+		if($id<50){
+			$now = time() ;
+			foreach ($list as $key=>$item){
+				$time = strtotime($item['startdate']) ;
+				if($time>$now){
+					unset($list[$key]) ;
+				}
+			}
+		}
+//		$list = array_values($list) ;
+		//前三个分类按时间排序，只取已经过时的活动，后面两个分类取所有的内容，剔除前面已经显示过的四个。
+		$newlist['list'] = array_slice($list,$p*4,4) ;
+		
+		$newlist['page'] = $p+1 ; 
+		$newlist['hasmore'] = sizeof($list)>($p+1)*4 ; 
+		
+//		echo sizeof($list) ;
+//		echo " ==  " ;
+//		echo sizeof($newlist['list']) ;
+		
+		echo json_encode($newlist) ;
+	}
 }
 ?>
