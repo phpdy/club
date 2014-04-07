@@ -1,30 +1,38 @@
-<link type="text/css" href="./css/style.css" rel="stylesheet">
-<script language="javascript" type="text/javascript" src="js/common.js" ></script>
+<link type="text/css" href="./css/order.css" rel="stylesheet">
 
-<!--main begin-->
-<div class="main">
-<div class="apply_sub">请选择支付方式</div>
-<?php
-include './comm/user_left.php';
-?>
-
-	<div class="rmain">
-	<div class="jpk">
-    <form name="myForm" id="myForm" method="post" action="user.php?action=infoSubmit">
-    	<div class="apply_desc"><p>欢迎您参加纽摄教育在线学院的学习，提升摄影技艺，开启自己的摄影新航程！你提交报名表之后，可以通过下列方式支付您的学习费用：</p></div>
-      	<div class="apply_sheet">
-        	<div><img src="./images/paycard.gif" width="408" height="252"></div>
-	        <div>
-	          <div style="width:470px;margin:0 auto;">
-	            <div style="width:230px;padding:15px 0;text-align:center;float:left"><input type="button" class="btn-img btn-pay" id="registsubmit" value="在线支付" onclick="window.location='pay.php?action=jump&typeid=1'"></div>
-	            <div style="width:230px;padding:15px 0;text-align:center;float:right"><input type="button" class="btn-img btn-pay" id="registsubmit" value="银行汇款" onclick="window.location='http://v.nyipcn.com/clist.php?cid=15&lid=30'"></div>
-	          </div>
-	          <div class="apply_desc"><p>&nbsp;&nbsp;&nbsp;&nbsp;我们在收到您的学习费用之后，会立即与您联系，将电子版《学习手册》及学习卡发送给您。您收到后就可以立即开始您的摄影学习旅程。</p>
-	          <p>&nbsp;&nbsp;&nbsp;&nbsp;如果您在报名过程中遇到任何问题，欢迎您随时<a href="http://v.nyipcn.com/clist.php?cid=19&lid=28" target=_blank><b>联系我们</b></a>。</p></div>
-	        </div>
-      	</div>
-    </form>
-    </div>
+<div id="mainbody">
+	<div class="main_new">
+	<div class="main_new_nav">
+		<span><a href="index.php">首页</a></span>&nbsp;&nbsp;>>&nbsp;&nbsp;
+		<span>活动报名</span>&nbsp;&nbsp;>>&nbsp;&nbsp;
+		<span><?php echo $news['title'];?></span>
+	</div>
+	<div class="main_content">
+	<table class="order">
+		<form action="">
+		<tr><td>会员信息</td><td>&nbsp;</td></tr>
+		<tr><td>姓名：</td><td><?php echo $user['username']; ?></td>	</tr>
+		<tr><td>性别：</td><td><?php echo $user['sex']==0?'女':'男'; ?></td>	</tr>
+		<tr><td>地址：</td><td><?php echo $user['province'].' '.$user['city'].' '.$user['address']; ?></td></tr>
+		<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+		<tr><td>活动信息</td><td>&nbsp;</td></tr>
+		<tr><td>活动：</td><td><?php echo $news['title']; ?></td></tr>
+		<tr><td>&nbsp;</td><td><img src="<?php echo $news['thumb']; ?>" width=120 /></td></tr>
+		<tr><td>活动日期：</td><td><?php echo $news['startdate']." - ".$news['closedate'] ; ?></td></tr>
+		<tr><td>活动费用：</td><td><?php echo $news['fee']; ?></td></tr>
+		<tr><td>&nbsp;</td><td><input type="submit" value="确认报名"></td></tr>
+		<input type=hidden name="id" value="<?php echo $id;?>"/>
+		<input type=hidden name="t" value="<?php echo $_GET['t'];?>"/>
+		</form>
+	</table>
+	<?php 
+//	print_r($news) ;
+	?>
+	</div>
+	
+	<div class="main_daily">
+		<div style="background:#999; font-size:16px;">活动排期</div>
+		<?php include 'daily.php';?>
+	</div>
 	</div>
 </div>
-<!--main end-->

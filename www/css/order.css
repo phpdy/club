@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.order{
+	width:100%;
+	font-size:14px;
+	padding:5px;
+	border:1px solid #dfe;
+}
+.order tr td{
+	padding:5px;
+}

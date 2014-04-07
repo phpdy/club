@@ -12,6 +12,7 @@ include './comm/user_left.php';
 	<div class="jpk">
     <form name="myForm" id="myForm" method="post" action="user.php?action=infoSubmit">
       <div class="apply_sheet">
+      	<input type="hidden" name="url" value="<?php echo @$_GET['url']; ?>">
       	<input type="hidden" class="sele" name="id" value="<?php echo $user['id']; ?>">
         <div class="apply_t1">用户名（不可修改）：<?php echo $user['name']; ?></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>姓名（请填写真实姓名）：<input type="text" tabindex="3" class="sele" size="20" maxlength="20" name="username" value="<?php echo $user['username']; ?>"></div>
