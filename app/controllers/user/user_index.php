@@ -28,6 +28,11 @@ class user_index extends BaseController {
 	
 	//登陆
 	public function loginAction(){
+		$url = @$_REQUEST['url'] ;
+		if(empty($url)){
+			$url = FinalClass::$_home_url ;
+		}
+		$this->view->assign('url',urldecode($url)) ;
 		$this->view->display('user_login.php');
 	}
 	public function loginSubmitAction(){
@@ -81,7 +86,7 @@ class user_index extends BaseController {
 		
 		$url = FinalClass::$_home_url ;
 		if(!empty($_POST['url'])){
-			$url = $_POST['url'] ;
+			$url = urldecode($_POST['url']) ;
 		}
 		
 		header("location:$url") ;
@@ -95,7 +100,7 @@ class user_index extends BaseController {
 		@session_start ();
 		$user = $_SESSION[FinalClass::$_session_user] ;
 		if(empty($user)){
-			header("location:login.php?url=".$_SERVER['REQUEST_URI']) ;
+			header("location:login.php?url=".urlencode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		$user = $this->userinfo_model->queryById($user['id']) ;
@@ -109,7 +114,7 @@ class user_index extends BaseController {
 		$result = $this->userinfo_model->update($_POST) ;
 		$url = FinalClass::$_home_url ;
 		if(!empty($_POST['url'])){
-			$url = $_POST['url'] ;
+			$url = urldecode($_POST['url']) ;
 		}
 		header("location:$url") ;
 		
@@ -122,7 +127,7 @@ class user_index extends BaseController {
 		@session_start ();
 		$user = $_SESSION[FinalClass::$_session_user] ;
 		if(empty($user)){
-			header("location:login.php?url=".$_SERVER['REQUEST_URI']) ;
+			header("location:login.php?url=".urlencode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		$this->view->assign('user',$user) ;
@@ -135,7 +140,7 @@ class user_index extends BaseController {
 		$_SESSION [FinalClass::$_session_user] = null ;
 		unset($_SESSION[FinalClass::$_session_user]) ;
 		
-		$url = "login.php" ;
+		$url = urlencode("login.php") ;
 		header("location:$url") ;
 	}
 }

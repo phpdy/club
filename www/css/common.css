@@ -328,6 +328,25 @@ a:hover {
 	margin-bottom:20px;
 	padding-bottom:40px;
 }
+.hd_title{
+	background:#999;
+	height: 18px;
+	margin:0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size:16px;
+	font-weight:bold;
+}
+.my_order{
+	background:red;
+	height: 18px;
+	margin:0px;
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size:16px;
+	font-weight:bold;
+}
 
 /***尾部***/
 .ifooter {

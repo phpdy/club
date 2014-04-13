@@ -67,7 +67,7 @@ class user_box extends BaseController {
 //		}
 //		header("location:$url") ;
 		
-		$log .= "|$result|$url" ;
+		$log .= "|$result" ;
 		$log .= "|".(int)(microtime(true)*1000-$start) ;
 		Log::logBusiness($log) ;
 	}

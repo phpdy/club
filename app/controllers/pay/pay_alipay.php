@@ -42,7 +42,10 @@ class pay_alipay extends BaseController {
     		}
     		
     		//订单成功，修改状态
-    		$pay = array() ;
+    		$pay = array(
+    			'orderid'	=>$_GET['orderid'],
+    			'state'		=>1,
+    		) ;
     		$this->pay_model->update($pay) ;
     		
 		} else {
@@ -75,7 +78,7 @@ class pay_alipay extends BaseController {
 		   $text="交易失败";
 		}
 		
-		header("Location: pay.php?action=success&orderid=$_GET[orderid]&text=".$text);
+		header("Location: order.php?action=success&orderid=$_GET[orderid]&text=".$text);
 	}
 	
 }

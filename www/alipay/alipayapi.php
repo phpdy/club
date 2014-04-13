@@ -52,7 +52,7 @@ require_once("lib/alipay_submit.class.php");
         //必填
 
         //付款金额
-		$price = "1180";//$_POST['WIDprice'];
+		$price = $_GET['money'];//$_POST['WIDprice'];
         //必填
 
         //商品数量

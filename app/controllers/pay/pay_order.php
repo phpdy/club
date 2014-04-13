@@ -30,14 +30,14 @@ class pay_order extends BaseController {
 		@session_start ();
 		$user = $_SESSION[FinalClass::$_session_user] ;
 		if(empty($user)){
-			header("location:login.php?url=".$_SERVER['REQUEST_URI']) ;
+			header("location:login.php?url=".urlencode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		
 		//用户信息完整性校验
 		$user = $this->userinfo_model->queryById($user['id']) ;
 		if(empty($user['mobile']) || empty($user['address'])){
-			header("location:user.php?action=info&url=".$_SERVER['REQUEST_URI']) ;
+			header("location:user.php?action=info&url=".urlencode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		$id = empty($_GET['id'])?0:$_GET['id'] ;
@@ -48,6 +48,60 @@ class pay_order extends BaseController {
 		
 		$this->view->display('pay_order.php');
 	}
-	
+
+	public function aliAction(){
+		$order = $this->Order('在线支付') ;
+		
+		header("location:alipay/alipayapi.php?orderid=$order[orderid]&money=$order[money]") ;
+//		$this->view->display('pay_order.php');
+	}
+	public function hkAction(){
+		$order = $this->Order('汇款') ;
+		
+		$this->view->assign('order',$order) ;
+		
+		$this->view->display('pay_hk.php');
+	}
+	public function successAction(){
+		$order = $this->pay_model->query(array('orderid'=>$_GET['orderid'])) ;
+		
+		$this->view->assign('order',$order[0]) ;
+		
+		$this->view->display('pay_ali.php');
+	}
+
+	private function Order($paytype){
+		
+		//用户登录检验
+		@session_start ();
+		$user = $_SESSION[FinalClass::$_session_user] ;
+		if(empty($user)){
+			header("location:login.php?url=".urlencode($_SERVER['REQUEST_URI'])) ;
+			die() ;
+		}
+		
+		//用户信息完整性校验
+		$user = $this->userinfo_model->queryById($user['id']) ;
+		
+		$id = empty($_GET['id'])?0:$_GET['id'] ;
+		$news = $this->index_model->getNewsByid($id) ;
+		
+		$order = array(
+			'orderid'	=>	'NY'.time() ,
+			'userid'	=>	$user['id'] ,
+			'username'	=>	$user['username'] ,
+			'ptype'		=>	4 ,	//缴费类别 俱乐部活动
+			'pid'		=>	$news['id'] ,
+			'money'		=>	$news['fee'] ,
+			'paytype'	=>	$paytype ,
+			'paydate'	=>	date('Y-m-d H:i:s') ,
+		) ;
+		$result = $this->pay_model->insert($order) ;
+		if($result){
+			return $order ;
+		} else {
+			return $order ;
+		}
+	}
 }
 ?>

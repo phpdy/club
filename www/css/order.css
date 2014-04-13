@@ -8,3 +8,12 @@
 .order tr td{
 	padding:5px;
 }
+
+.btn-order {
+	width:180px; 
+	height:36px; 
+	color:#FFF; 
+	font-size:14px;
+	font-weight:800;
+	background:url(http://v.nyipcn.com/images/btn.gif) no-repeat ;
+}

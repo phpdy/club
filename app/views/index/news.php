@@ -15,10 +15,10 @@
 	</div>
 	
 	<div class="main_daily">
-		<div style="background:#999; font-size:16px;">活动排期</div>
+		<div class="hd_title">活动排期</div>
 		<?php include 'daily.php';?>
 		<?php if(in_array($t, array(1,2,3))){ ?>
-		<div onclick="pay(<?php echo $news['id'];?>)">马上报名</div>
+		<div onclick="pay(<?php echo $news['id'];?>)" class="my_order">马上报名</div>
 		<?php }?>
 	</div>
 	</div>

@@ -29,7 +29,7 @@ class pay_index extends BaseController {
 		@session_start ();
 		$user = $_SESSION[FinalClass::$_session_user] ;
 		if(empty($user)){
-			header("location:login.php?url=".$_SERVER['REQUEST_URI']) ;
+			header("location:login.php?url=".urldecode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		
@@ -46,7 +46,7 @@ class pay_index extends BaseController {
 		@session_start ();
 		$user = $_SESSION[FinalClass::$_session_user] ;
 		if(empty($user)){
-			header("location:login.php?url=".$_SERVER['REQUEST_URI']) ;
+			header("location:login.php?url=".urldecode($_SERVER['REQUEST_URI'])) ;
 			die() ;
 		}
 		
@@ -63,15 +63,9 @@ class pay_index extends BaseController {
 	}
 
 	public function successAction(){
-
-		$typeid = $_GET['typeid'] ;
-		$orderid= "NY".time() ;
-		$this->view->assign('typeid',$typeid) ;
-		$this->view->assign('user',$user) ;
+		$orderid = $_GET['orderid'] ;
+		
 		$this->view->assign('orderid',$orderid) ;
-		
-//		$this->pay_model->insert() ;
-		
 		
 		$this->view->display('pay_jump.php');
 	}
