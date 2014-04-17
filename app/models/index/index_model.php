@@ -13,7 +13,7 @@ class index_model extends BaseModel {
 	
 	public function getNewsList($pid){
 		
-		$sql = "select id,catid,title,thumb,description,url,startdate,closedate,fee from v9_club where catid=$pid order by inputtime desc" ;
+		$sql = "select id,catid,title,thumb,description,url,startdate,closedate,fee from v9_club where catid=$pid order by startdate desc" ;
 		$result = $this->getAll($sql) ;
 		
 		foreach ($result as $item){
