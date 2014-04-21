@@ -131,18 +131,23 @@ class index_index extends BaseController {
 		$this->view->assign('hd',$hd) ;
 		$newslist = $this->index_model->getNewsList($id) ;
 	
-		$list = array() ;
-		$now = time() ;
-		foreach ($newslist as $item){
-			$time = strtotime($item['startdate']) ;
-			if($time>$now){
-				if(!empty($list) && sizeof($list)==$this->psize){
-					continue ;
+		//特殊处理公益活动部分
+		if($t==3){
+			$newslist2 = $this->index_model->getNewsList(56) ;
+			$list = array_slice($newslist2,0,$this->psize) ;
+		} else {
+			$list = array() ;
+			$now = time() ;
+			foreach ($newslist as $item){
+				$time = strtotime($item['startdate']) ;
+				if($time>$now){
+					if(!empty($list) && sizeof($list)==$this->psize){
+						continue ;
+					}
+					$list[] = $item ;
 				}
-				$list[] = $item ;
 			}
 		}
-		
 		$this->view->assign('title1',$title_before) ;
 		$this->view->assign('title2',$title_after) ;
 		$this->view->assign('list',$list) ;
