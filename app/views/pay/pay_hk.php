@@ -4,7 +4,7 @@
 	<div class="main_new">
 	<div class="main_new_nav">
 		<span><a href="index.php">首页</a></span>&nbsp;&nbsp;>>&nbsp;&nbsp;
-		<span>活动报名</span>&nbsp;&nbsp;>>&nbsp;&nbsp;
+		<span><a href="index.php?t=5">会员中心</a></span>&nbsp;&nbsp;>>&nbsp;&nbsp;
 		<span>订单</span>
 	</div>
 	<div class="main_content">

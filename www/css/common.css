@@ -86,7 +86,20 @@ a:hover {
 	display:block;
 	height:30px;
 	color:#fff;
+	font-weight:bold;
+}
+#mainnav_a {
+	display:block;
+	height:30px;
+	color:#fff;
 	background:#000 no-repeat;
+	font-weight:bold;
+}
+#mainnav_select {
+	display:block;
+	height:30px;
+	color:#fff;
+	background:#555 no-repeat;
 	font-weight:normal;
 }
 
@@ -179,6 +192,7 @@ a:hover {
 	margin-right: 20px;
 	margin-bottom: 20px;
 	width:960px;
+	cursor: pointer;
 }
 
 /***** 二级页面 *******/
@@ -291,6 +305,7 @@ a:hover {
 	float: left;
 	margin:auto;
 	margin-right: 100px;
+	cursor: pointer;
 }
 
 /***详情页***/
@@ -346,6 +361,7 @@ a:hover {
 	padding-bottom: 5px;
 	font-size:16px;
 	font-weight:bold;
+	cursor: pointer;
 }
 
 /***尾部***/

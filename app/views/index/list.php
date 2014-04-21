@@ -48,7 +48,7 @@
 		<div class="mainc_title"><?php echo $title2 ; ?></div>
 		<hr>
 		<div class="mainc_img" id="html"></div>
-		<div class="hasmore" id="hasmore"> << more >> </div>
+		<div class="hasmore" id="hasmore"><< more >></div>
 		<input type="hidden" id="p" name="p" value=0>
 	</div>
 </div>

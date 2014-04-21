@@ -40,9 +40,9 @@
 		$t = empty($t)?0:$t ;
 		foreach ($title as $key=>$value){
 			if ($t==$key){
-				echo "<li>$value</li>" ;
+				echo "<li id=\"mainnav_select\"><a href=\"index.php?t=$key\">$value</a></li>" ;
 			} else {
-				echo "<li><a href=\"index.php?t=$key\">$value</a></li>" ;
+				echo "<li id=\"mainnav_a\"><a href=\"index.php?t=$key\">$value</a></li>" ;
 			}
 		}
 		?>
