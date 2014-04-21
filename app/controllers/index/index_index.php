@@ -1,7 +1,7 @@
 <?php
 
 class index_index extends BaseController {
-
+	private $psize =8;
 	public function init(){
 		$this->index_model = $this->initModel('index_model','index');
 		
@@ -64,8 +64,8 @@ class index_index extends BaseController {
 			1	=>	$club47 ,
 			2	=>	$club48 ,
 			3	=>	$club49 ,
-			4	=>	array_slice($club51,0,4) ,
-			5	=>	array_slice($club52,0,4) ,
+			4	=>	array_slice($club51,0,$this->psize) ,
+			5	=>	array_slice($club52,0,$this->psize) ,
 		) ;
 		$this->view->assign('list',$list) ;
 	}
@@ -136,7 +136,7 @@ class index_index extends BaseController {
 		foreach ($newslist as $item){
 			$time = strtotime($item['startdate']) ;
 			if($time>$now){
-				if(!empty($list) && sizeof($list)==4){
+				if(!empty($list) && sizeof($list)==$this->psize){
 					continue ;
 				}
 				$list[] = $item ;
@@ -203,10 +203,10 @@ class index_index extends BaseController {
 		}
 //		$list = array_values($list) ;
 		//前三个分类按时间排序，只取已经过时的活动，后面两个分类取所有的内容，剔除前面已经显示过的四个。
-		$newlist['list'] = array_slice($list,$p*4,4) ;
+		$newlist['list'] = array_slice($list,$p*$this->psize,$this->psize) ;
 		
 		$newlist['page'] = $p+1 ; 
-		$newlist['hasmore'] = sizeof($list)>($p+1)*4 ; 
+		$newlist['hasmore'] = sizeof($list)>($p+1)*$this->psize ; 
 		
 //		echo sizeof($list) ;
 //		echo " ==  " ;
