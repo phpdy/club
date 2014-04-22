@@ -2,13 +2,13 @@
 //
 class index_model extends BaseModel {
 	protected $dbIndex = 'phpcms';
-	protected $dbTable = "userinfo" ;
+	protected $dbTable = "v9_club" ;
 	
 	protected $items = array('name','times','info','imgurl') ;
 
 
 	protected function getOrder(){
-		return "order by id " ;
+		return "order by startdate desc" ;
 	}
 	
 	public function getNewsList($pid){

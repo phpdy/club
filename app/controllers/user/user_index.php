@@ -4,7 +4,9 @@ class user_index extends BaseController {
 
 	public function init(){
 		$this->userinfo_model = $this->initModel('userinfo_model');
-		
+		$this->pay_model = $this->initModel('pay_model','pay');
+		$this->index_model = $this->initModel('index_model','index');
+
 		$this->view->assign('t',5) ;
 		
 		$title = array(
@@ -26,6 +28,33 @@ class user_index extends BaseController {
 		$this->view->display('user_reg.php');
 	}
 	
+	public function orderAction(){
+		$user = $_SESSION[FinalClass::$_session_user] ;
+
+		$newslist = $this->index_model->queryAll() ;
+		//print_r($newslist) ;
+		$orderlist = $this->pay_model->findOrderListByUserid($user['id']) ;
+		foreach($orderlist as $key=>$order){
+			$state = "未付款" ;
+			if($order['state']==1){
+				$state = "成功" ;
+			}
+			if($order['state']==-1){
+				$state = "失败" ;
+			}
+			$orderlist[$key]['state'] = $state ;
+			foreach($newslist as $news){
+				if($news['id']==$order['pid']){
+					$orderlist[$key]['hd'] = $news ;
+					break ;
+				}
+			}
+		}
+
+		$this->view->assign('orderlist',$orderlist) ;
+		$this->view->display('user_order.php');
+	}
+
 	//登陆
 	public function loginAction(){
 		$url = @$_REQUEST['url'] ;
