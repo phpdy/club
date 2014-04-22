@@ -4,6 +4,7 @@ class index_index extends BaseController {
 	private $psize =8;
 	public function init(){
 		$this->index_model = $this->initModel('index_model','index');
+		$this->pay_model = $this->initModel('pay_model','pay');
 		
 		$t = empty($_GET['t'])?0:$_GET['t'] ;
 		$this->view->assign('t',$t) ;
@@ -168,6 +169,9 @@ class index_index extends BaseController {
 		$this->view->assign('id',$_GET['id']) ;
 		$news = $this->index_model->getNewsByid($_GET['id']) ;
 		$this->view->assign('news',$news) ;
+
+		$orderlist = $this->pay_model->findOrderListByPid($_GET['id']) ;
+		$this->view->assign('orderlist',$orderlist) ;
 		
 		$result = $this->index_model->getNewsContent($_GET['id']) ;
 		$this->view->assign('result',$result) ;
