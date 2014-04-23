@@ -48,7 +48,7 @@
 		<div class="mainc_title"><?php echo $title2 ; ?></div>
 		<hr>
 		<div class="mainc_img" id="html"></div>
-		<div class="hasmore" id="hasmore"><< more >></div>
+		<div class="hasmore" id="hasmore"><img src="images/more.gif" alt="more"/></div>
 		<input type="hidden" id="p" name="p" value=0>
 	</div>
 </div>
@@ -72,7 +72,7 @@ $(function(){
 				var item = list[i] ;
 				html = "<ul>"+
 				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
-				"<li class='shey_img'><img src='"+item["imgurl"]+"' /></li>"+
+				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='ͼƬ'/></li>"+
 				"<li class='shey_txt'>"+item["title"]+" >></li>"+
 				"</a>"+
 				"<li>&nbsp; "+item["startdate"]+"</li>"+
