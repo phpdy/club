@@ -11,20 +11,26 @@ include './comm/user_left.php';
 	<div class="jpk">
     <form name="form" id="form" method="post" action="user.php?action=pwdSubmit">
       <div class="apply_sheet">
+	  <table class="order">
 	   <?php 
 		//print_r($orderlist) ;
 	   foreach($orderlist as $order){?>
-        <div class="apply_t1">
-		<img src="<?php echo $order['hd']['thumb']; ?>" width="120" height="80"/>
+        <tr>
+		<td><img src="<?php echo $order['hd']['thumb']; ?>" width="120" height="80"/></td>
+		<td style="text-align:left;">
 		<?php 
-		echo "订单号：".$order['orderid'] ."&nbsp;<br/>"
-	   ."活动名称：". $order['hd']['title'] ."&nbsp;<br/>"
-	   ."活动时间：". $order['hd']['startdate'] ."-".  $order['hd']['closedate'] ."&nbsp;<br/>"
-	   ."支付方式：". $order['paytype'] ."&nbsp; 金额：". $order['money'] 
-	   ."状态：". $order['state'] ;
+		echo "支付订单：".$order['orderid'] ."&nbsp;<br/>"
+	   ."活动名称：<b>". $order['hd']['title'] ."</b>&nbsp;<br/>"
+	   ."活动时间：". $order['hd']['startdate'] ."日至".  $order['hd']['closedate'] ."日&nbsp;<br/>"
+	   //."支付方式：". $order['paytype'] ."&nbsp;<br/>"
+	   ."活动金额：". $order['money'] ." 元&nbsp;<br/>"
+	   //."状态：". $order['state'] 
+	   ;
 		?>
-		</div>
+		</td>
+		</tr>
 		<?php } ?>
+		</table>
       </div>
     </form>
     </div>

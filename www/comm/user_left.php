@@ -4,7 +4,7 @@
 	<li class='current-menu-item'><a href='user.php?action=reg'>用户注册</a></li>
 	<li class='current-menu-item'><a href='user.php?action=info'>账号信息</a></li>
 	<li class='current-menu-item'><a href='user.php?action=pwd'>重置密码</a></li>
-	<li class='current-menu-item'><a href='user.php?action=order'>我的订单</a></li>
+	<li class='current-menu-item'><a href='user.php?action=order'>我的活动</a></li>
 <!--	<li class='current-menu-item'><a href='pay.php'>在线支付</a></li>-->
   </ul>
   <!--加入我们 begin-->
