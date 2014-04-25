@@ -34,6 +34,7 @@ class user_index extends BaseController {
 		$newslist = $this->index_model->queryAll() ;
 		//print_r($newslist) ;
 		$orderlist = $this->pay_model->findOrderListByUserid($user['id']) ;
+		
 		foreach($orderlist as $key=>$order){
 			$state = "未付款" ;
 			if($order['state']==1){
@@ -42,7 +43,7 @@ class user_index extends BaseController {
 			if($order['state']==-1){
 				$state = "失败" ;
 			}
-			$orderlist[$key]['state'] = $state ;
+			$orderlist[$key]['state2'] = $state ;
 			foreach($newslist as $news){
 				if($news['id']==$order['pid']){
 					$orderlist[$key]['hd'] = $news ;
@@ -50,7 +51,18 @@ class user_index extends BaseController {
 				}
 			}
 		}
+		$now = time() ;
+		foreach($orderlist as $key=>$order){
+			$time = strtotime($order['hd']['startdate']) ;
+			if($now>$time){
+				$orderlist1[] = $order ;
+			} else {
+				$orderlist2[] = $order ;
+			}
+		}
 
+		$this->view->assign('orderlist1',$orderlist1) ;
+		$this->view->assign('orderlist2',$orderlist2) ;
 		$this->view->assign('orderlist',$orderlist) ;
 		$this->view->display('user_order.php');
 	}
