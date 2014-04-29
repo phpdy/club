@@ -47,7 +47,6 @@
 <div id="mainbody2">
 <div id="mainc2">
 	<div class="mainc_title">和我们一起探索美妙的摄影世界</div>
-	<hr>
 	<div class="mainc_img" id="img_0"></div>
 	<div class="more" id="more0"><b>更多摄影作品展示</b>></div><input type="hidden" id="p0" name="p0" value=0>
 	

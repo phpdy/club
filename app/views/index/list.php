@@ -6,8 +6,7 @@
 	<div id="mainc">
 		<div>
 			<div class="main-left">
-				<h3><?php echo $hd['title']; ?></h3>
-				<hr>
+				<div class="main-left-title"><?php echo $hd['title']; ?></div>
 				<?php echo $hd['info']; ?>
 			</div>
 			<div class="main-right">
@@ -21,7 +20,6 @@
 <div id="mainbody2">
 	<div id="mainc2">
 		<div class="mainc_title"><?php echo $title1 ; ?></div>
-		<hr>
 		<div class="mainc_img">
 			<?php 
 			if(!empty($list))
@@ -46,7 +44,6 @@
 <div id="mainbody2">
 	<div id="mainc2">
 		<div class="mainc_title"><?php echo $title2 ; ?></div>
-		<hr>
 		<div class="mainc_img" id="html"></div>
 		<div class="hasmore" id="hasmore"><img src="images/more.gif" alt="more"/></div>
 		<input type="hidden" id="p" name="p" value=0>
