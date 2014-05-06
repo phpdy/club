@@ -20,24 +20,30 @@
 <div id="mainbody2">
 	<div id="mainc2">
 		<div class="mainc_title"><?php echo $title1 ; ?></div>
-		<div class="mainc_img">
 			<?php 
-			if(!empty($list))
-			foreach ($list as $news){
-				$id		= $news['id'] ;
-				$imgurl	= $news['imgurl'] ;
-				$info 	= $news['title'] ;
-				$times 	= $news['startdate'] ;
-				?>
-				<ul>
-					<a href="news.php?t=<?php echo $t;?>&id=<?php echo $id;?>">
-					<li class="shey_img"><img src="<?php echo $imgurl ;?>" /></li>
-					<li class="shey_txt"><?php echo $info ;?> >></li>
-					</a>
-					<li>&nbsp; <?php echo $times ;?></li>
-				</ul>
-			<?php }?>
-		</div>
+			if(!empty($list)){?>
+				<div class="mainc_img">
+				<?php 
+				foreach ($list as $news){
+					$id		= $news['id'] ;
+					$imgurl	= $news['imgurl'] ;
+					$info 	= $news['title'] ;
+					$times 	= $news['startdate'] ;
+					?>
+					<ul>
+						<a href="news.php?t=<?php echo $t;?>&id=<?php echo $id;?>">
+						<li class="shey_img"><img src="<?php echo $imgurl ;?>" /></li>
+						<li class="shey_txt"><?php echo $info ;?> >></li>
+						</a>
+						<li>&nbsp; <?php echo $times ;?></li>
+					</ul>
+				<?php }?>
+				</div>
+			<?php } else if($t==3) {?>
+				<div class="mainc_img" id="html2"></div>
+				<div class="hasmore" id="hasmore2"><img src="images/more.gif" alt="more"/></div>
+				<input type="hidden" id="p2" name="p2" value=0>
+			<?php }	?>
 	</div>
 </div>
 
@@ -59,7 +65,7 @@ $(function(){
 		var p = $('#p').val() ;
 //		alert(p) ;
 
-		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p},
+		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p, hid:49},
 			function(result){
 //			alert(result) ;
 
@@ -69,7 +75,7 @@ $(function(){
 				var item = list[i] ;
 				html = "<ul>"+
 				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
-				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='ͼƬ'/></li>"+
+				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='more'/></li>"+
 				"<li class='shey_txt'>"+item["title"]+" >></li>"+
 				"</a>"+
 				"<li>&nbsp; "+item["startdate"]+"</li>"+
@@ -92,5 +98,47 @@ $(function(){
 		return true ;
 	});
 	$("#hasmore").click() ;
+
+	
+	$("#hasmore2").click(function(){
+		var p = $('#p2').val() ;
+//		alert(p) ;
+
+		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p, hid:56},
+			function(result){
+//			alert(result) ;
+
+			var data = eval("["+result+"]") ;
+			var list = data[0]["list"] ;
+			for(var i=0;i<list.length;i++){
+				var item = list[i] ;
+				html = "<ul>"+
+				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
+				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='more'/></li>"+
+				"<li class='shey_txt'>"+item["title"]+" >></li>"+
+				"</a>"+
+				"<li>&nbsp; "+item["startdate"]+"</li>"+
+				"</ul>" ;
+//				alert(html) ;
+				$('#html2').append(html) ;
+			}
+
+//			alert(data[0]["page"]) ;
+//			alert(data[0]["hasmore"]) ;
+//			if(data[0]["hasmore"]){
+				$('#p2').val(parseInt(p)+1) ;
+//				$('#hasmore').show() ;
+//			} else {
+//				$('#hasmore').hide() ;
+//			}
+			
+		});
+		
+		return true ;
+	});
+	<?php if($t==3){
+			echo '$("#hasmore2").click() ;' ;
+	}?>
+	
 });
 </script>
