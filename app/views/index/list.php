@@ -73,7 +73,7 @@ $(function(){
 			var list = data[0]["list"] ;
 			for(var i=0;i<list.length;i++){
 				var item = list[i] ;
-				html = "<ul>"+
+				var html = "<ul>"+
 				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
 				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='more'/></li>"+
 				"<li class='shey_txt'>"+item["title"]+" >></li>"+
@@ -112,7 +112,7 @@ $(function(){
 			var list = data[0]["list"] ;
 			for(var i=0;i<list.length;i++){
 				var item = list[i] ;
-				html = "<ul>"+
+				var html = "<ul>"+
 				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
 				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='more'/></li>"+
 				"<li class='shey_txt'>"+item["title"]+" >></li>"+
