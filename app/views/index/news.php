@@ -18,13 +18,13 @@
 		<div class="hd_title">活动排期</div>
 		<?php include 'daily.php';?>
 		<?php if(in_array($t, array(1,2,3))){ ?>
-		<div onclick="pay(<?php echo $news['id'];?>)" class="my_order">立刻报名</div>
+		<div onclick="pay(<?php echo $news['id'];?>)" class="my_order"></div>
 		<?php }?>
 		<?php 
 		foreach($orderlist as $key=>$order){
 			$id=$key+1 ;
 			$date = substr($order['paydate'],0,10) ;
-			echo "<div class='order_list'>$id.&nbsp;&nbsp;&nbsp;&nbsp;$order[username]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$date</div>" ;
+			//echo "<div class='order_list'>$id.&nbsp;&nbsp;&nbsp;&nbsp;$order[username]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$date</div>" ;
 		}
 		?>
 	</div>

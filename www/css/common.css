@@ -147,6 +147,7 @@ a:hover {
 .fenlei li{
 	margin-bottom: 20px;
 	background:#ddd;
+	float:left;
 }
 .tj_img img{
 	margin:0px;
@@ -352,6 +353,7 @@ a:hover {
 	position:relative;
 	margin-bottom:20px;
 	padding-bottom:40px;
+	text-align:center;
 }
 .hd_title{
 	background:#999;
@@ -363,7 +365,7 @@ a:hover {
 	font-weight:bold;
 }
 .my_order{
-	background:red;
+	#background:red;
 	height: 18px;
 	margin:0px;
 	margin-top: 15px;
@@ -372,6 +374,11 @@ a:hover {
 	font-size:16px;
 	font-weight:bold;
 	cursor: pointer;
+	text-align:center;
+	float:center;
+	background:url(../images/bm.gif) no-repeat center;
+	width: 160px;
+	height: 87px;
 }
 .order_list{
 	padding-top: 5px;
