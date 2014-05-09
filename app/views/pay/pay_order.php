@@ -23,8 +23,8 @@
 		<tr><td>活动日期：</td><td><?php echo $news['startdate']." 至 ".$news['closedate'] ; ?></td></tr>
 		<tr><td>活动费用：</td><td><?php echo $news['fee']; ?></td></tr>
 		<tr><td>&nbsp;</td>
-		<td><input type="button" value="在线支付" class="btn-order" id="order_ali">&nbsp;&nbsp;&nbsp;
-		<input type="button" value="汇款报名" class="btn-order" id="order_hk"></td></tr>
+		<td><input type="button" value="立刻在线报名" class="btn-order" id="order_ali">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="稍后汇款报名" class="btn-order" id="order_hk"></td></tr>
 	</table>
 	</div>
 	
