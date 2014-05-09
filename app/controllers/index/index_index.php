@@ -3,6 +3,7 @@
 class index_index extends BaseController {
 	private $psize =8;
 	public function init(){
+		$this->pic_model = $this->initModel('pictue_model','index');
 		$this->index_model = $this->initModel('index_model','index');
 		$this->pay_model = $this->initModel('pay_model','pay');
 		
@@ -69,6 +70,10 @@ class index_index extends BaseController {
 			5	=>	array_slice($club52,0,$this->psize) ,
 		) ;
 		$this->view->assign('list',$list) ;
+
+		
+		$piclist = $this->pic_model->queryAll() ;
+		$this->view->assign('piclist',$piclist) ;
 	}
 	
 	/**
