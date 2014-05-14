@@ -1,14 +1,22 @@
 <!--main begin-->
 <div id="mainbody">
 	<div class="topimg">
-		<?php foreach($piclist as $item){ ?>
-		<div class="djimg" style="background: url(<?php echo $item['imgurl'];?>);">
+		<?php foreach($piclist as $key=>$item){ ?>
+		<div class="djimg" id="flash<?php echo $key+1 ;?>" style="display: none;background: url(<?php echo $item['imgurl'];?>);">
 			<div class="djimg_text">
+				<a href="<?php echo $item['url'];?>">
 				<div class="djimg_title"><?php echo $item['title'];?></div>
 				<div class="djimg_info"><?php echo $item['description'];?></div>
+				</a>
 			</div>
 		</div>
 		<?php }?>
+		<div class="flash_bar">
+			<div class="no" id="f1" onclick="changeflash(1)"></div>
+			<div class="dq" id="f2" onclick="changeflash(2)"></div>
+			<div class="no" id="f3" onclick="changeflash(3)"></div>
+			<div class="no" id="f4" onclick="changeflash(4)"></div>
+        </div>
 	</div>
 	<div id="mainc">
 		<?php 
@@ -97,4 +105,23 @@ $(function(){
 	$("#more<?php echo $i;?>").click();
 	<?php }?>
 });
+
+function changeflash(i) {
+	currentindex=i;
+	for (j=1;j<=4;j++){
+		if (j==i) {
+			$("#flash"+j).fadeIn("normal");
+			$("#flash"+j).css("display","block");
+			$("#f"+j).removeClass();
+			$("#f"+j).addClass("dq");
+			//$("#flashBg").css("background-color",$("#flash"+j).attr("name"));
+		}else{
+			$("#flash"+j).css("display","none");
+			$("#f"+j).removeClass();
+			$("#f"+j).addClass("no");
+		}
+	}
+}
+changeflash(1);
+
 </script>

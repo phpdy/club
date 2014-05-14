@@ -112,6 +112,34 @@ img{
 }
 
 /**** 首页 ***/
+.flash_bar{
+	position:relative;
+	z-index:11;
+	float:right;
+	padding-right:15px;
+	width:100px;
+	margin-top: -50px;
+}
+.no{
+	display:block;
+	float:left;
+	width:10px; 
+	height:10px; 
+	margin:5px 5px;
+	cursor:pointer;
+	background:url(http://stat.ablesky.com/content/pic/album/2012-05-06/4f792d4a-15a8-4fe9-b4c2-fb43928acab8.png) no-repeat 0px 0px;
+	_background:none;
+}
+.dq{
+	display:block;
+	float:left;
+	width:10px; 
+	height:10px; 
+	margin:5px 5px;
+	cursor:pointer;
+	background:url(http://stat.ablesky.com/content/pic/album/2012-05-06/0922ee6e-e219-4767-9b95-f06ac735d5f9.png) no-repeat 0px 0px;
+	_background:none;
+}
 .djimg{
 	position:relative;
 	width:960px;
@@ -127,9 +155,9 @@ img{
 	background:#234;
 	color: #fff;
 	filter:alpha(opacity=80);  
-    -moz-opacity:0.8;  
-    -khtml-opacity: 0.8;  
-    opacity: 0.8;  
+    	-moz-opacity:0.8;  
+    	-khtml-opacity: 0.8;  
+    	opacity: 0.8;  
 }
 .djimg_title{
 	width: 80%;
@@ -139,6 +167,7 @@ img{
 	padding-right: 100px;
 	font-size:22px;
 	font-weight: bold;
+	color: #fff;
 }
 .djimg_info{
 	width: 80%;
@@ -146,6 +175,7 @@ img{
 	padding-left: 50px;
 	padding-right: 100px;
 	font-size:12px;
+	color: #fff;
 }
 .fenlei{
 	float:left;
@@ -337,7 +367,7 @@ img{
 	height:30px;
 	float: left;
 	margin:auto;
-	margin-right: 100px;
+	margin-left: 420px;
 	cursor: pointer;
 }
 

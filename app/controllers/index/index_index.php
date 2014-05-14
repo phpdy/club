@@ -128,8 +128,8 @@ class index_index extends BaseController {
 					."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此外，我们欢迎所有的摄影师、摄影爱好者、摄影相关机构参与到捐建“摄影希望学校”公益活动中来，给贫困地区的孩子提供帮助，让孩子们能够掌握摄影技能，通过照相机拍摄自己的家乡，记录自己身边的事和身边的人们，甚至让摄影成为自己的职业。让孩子们能够透过镜头感受生活、热爱生活。<br/>",
 					'img'	=>	"/img/{$t}02.jpg",
 				) ;
-				$title_before ="摄影公益大课堂";
-				$title_after ="摄影希望学校" ;
+				$title_before ="摄影希望学校";
+				$title_after ="摄影公益大课堂" ;
 				break ;
 			
 		}
@@ -194,8 +194,8 @@ class index_index extends BaseController {
 				$id = 48 ;
 				break ;
 			case 3:
-				//$id = 49 ;
-				$id = empty($_GET['hid'])?49:$_GET['hid'] ;
+				$id = 49 ;
+				//$id = empty($_GET['hid'])?49:$_GET['hid'] ;
 				break ;
 			case 4:
 				$id = 51 ;

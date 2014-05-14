@@ -17,6 +17,7 @@
 </div>
 
 
+<?php if($t!=3) {?>
 <div id="mainbody2">
 	<div id="mainc2">
 		<div class="mainc_title"><?php echo $title1 ; ?></div>
@@ -39,13 +40,10 @@
 					</ul>
 				<?php }?>
 				</div>
-			<?php } else if($t==3) {?>
-				<div class="mainc_img" id="html2"></div>
-				<div class="hasmore" id="hasmore2"><img src="images/more.gif" alt="more"/></div>
-				<input type="hidden" id="p2" name="p2" value=0>
 			<?php }	?>
 	</div>
 </div>
+<?php }	?>
 
 <div id="mainbody2">
 	<div id="mainc2">
@@ -56,7 +54,6 @@
 	</div>
 </div>
 
-
 <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script language="javascript">
 $(function(){
@@ -65,7 +62,7 @@ $(function(){
 		var p = $('#p').val() ;
 //		alert(p) ;
 
-		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p, hid:49},
+		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p},
 			function(result){
 //			alert(result) ;
 
@@ -99,46 +96,6 @@ $(function(){
 	});
 	$("#hasmore").click() ;
 
-	
-	$("#hasmore2").click(function(){
-		var p = $('#p2').val() ;
-//		alert(p) ;
-
-		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p, hid:56},
-			function(result){
-//			alert(result) ;
-
-			var data = eval("["+result+"]") ;
-			var list = data[0]["list"] ;
-			for(var i=0;i<list.length;i++){
-				var item = list[i] ;
-				var html = "<ul>"+
-				"<a href='news.php?t=<?php echo $t;?>&id="+item["id"]+"'>"+
-				"<li class='shey_img'><img src='"+item["imgurl"]+"'  alt='more'/></li>"+
-				"<li class='shey_txt'>"+item["title"]+" >></li>"+
-				"</a>"+
-				"<li>&nbsp; "+item["startdate"]+"</li>"+
-				"</ul>" ;
-//				alert(html) ;
-				$('#html2').append(html) ;
-			}
-
-//			alert(data[0]["page"]) ;
-//			alert(data[0]["hasmore"]) ;
-//			if(data[0]["hasmore"]){
-				$('#p2').val(parseInt(p)+1) ;
-//				$('#hasmore').show() ;
-//			} else {
-//				$('#hasmore').hide() ;
-//			}
-			
-		});
-		
-		return true ;
-	});
-	<?php if($t==3){
-			echo '$("#hasmore2").click() ;' ;
-	}?>
 	
 });
 </script>
