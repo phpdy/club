@@ -57,10 +57,10 @@
 <div id="mainc2">
 	<div class="mainc_title">和我们一起探索美妙的摄影世界</div>
 	<div class="mainc_img" id="img_0"></div>
-	<div class="more" id="more0"><b>更多摄影作品展示</b>></div><input type="hidden" id="p0" name="p0" value=0>
+	<div class="more" id="more0"><b>更多摄影作品展示</b>></div>
 	
 	<div class="mainc_img" id="img_1"></div>
-	<div class="more" id="more1"><b>更多过往活动花絮</b>></div><input type="hidden" id="p1" name="p1" value=0>
+	<div class="more" id="more1"><b>更多过往活动花絮</b>></div>
 	
 </div>
 </div>
@@ -71,11 +71,11 @@
 <script language="javascript">
 $(function(){
 	<?php for($i=0;$i<2;$i++){?>
+	var p<?php echo $i;?> =0 ;
 	$("#more<?php echo $i;?>").click(function(){
-		var p = $('#p<?php echo $i;?>').val() ;
 		//alert(p) ;
 
-		$.get("./index.php",{action:"more",o:"json", t:<?php echo $i+4;?>, p:p},
+		$.get("./index.php",{action:"more",o:"json", t:<?php echo $i+4;?>, p:p<?php echo $i;?>},
 			function(data){
 //			alert(data) ;
 
@@ -91,9 +91,9 @@ $(function(){
 //				alert(html) ;
 				$('#img_<?php echo $i;?>').append(html) ;
 			}
-
+			p<?php echo $i;?> ++ ;
 //			if(data[0]["hasmore"]){
-				$('#p<?php echo $i;?>').val(parseInt(p)+1) ;
+				//$('#p<?php echo $i;?>').val(parseInt(p)+1) ;
 //			} else {
 //				$('#more<?php echo $i;?>').hide() ;
 //			}
@@ -123,5 +123,19 @@ function changeflash(i) {
 	}
 }
 changeflash(1);
+function startAm(){
+	timerID = setInterval("timer_tick()",5000);
+}
+function stopAm(){
+	clearInterval(timerID);
+}
+function timer_tick() {
+    currentindex=currentindex>=4?1:currentindex+1;
+	changeflash(currentindex);
+}
+$(document).ready(function(){
+	$(".flash_bar div").mouseover(function(){stopAm();}).mouseout(function(){startAm();});
+	startAm();
+});
 
 </script>

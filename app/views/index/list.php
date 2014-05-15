@@ -50,7 +50,6 @@
 		<div class="mainc_title"><?php echo $title2 ; ?></div>
 		<div class="mainc_img" id="html"></div>
 		<div class="hasmore" id="hasmore"><img src="images/more.gif" alt="more"/></div>
-		<input type="hidden" id="p" name="p" value=0>
 	</div>
 </div>
 
@@ -58,8 +57,9 @@
 <script language="javascript">
 $(function(){
 
+	var p = 0 ;
 	$("#hasmore").click(function(){
-		var p = $('#p').val() ;
+		//var p = $('#p').val() ;
 //		alert(p) ;
 
 		$.get("./index.php",{action:"more",o:"json", t:<?php echo $t;?>, p:p},
@@ -80,11 +80,11 @@ $(function(){
 //				alert(html) ;
 				$('#html').append(html) ;
 			}
-
+			p++ ;
 //			alert(data[0]["page"]) ;
 //			alert(data[0]["hasmore"]) ;
 //			if(data[0]["hasmore"]){
-				$('#p').val(parseInt(p)+1) ;
+				//$('#p').val(parseInt(p)+1) ;
 //				$('#hasmore').show() ;
 //			} else {
 //				$('#hasmore').hide() ;

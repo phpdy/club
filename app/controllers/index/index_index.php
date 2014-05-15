@@ -58,7 +58,7 @@ class index_index extends BaseController {
 	private function getIndexData(){
 		$club47 = $this->index_model->getNewsList(47) ;
 		$club48 = $this->index_model->getNewsList(48) ;
-		$club49 = $this->index_model->getNewsList(56) ;
+		$club49 = $this->index_model->getNewsList(49) ;
 		$club51 = $this->index_model->getNewsList(51) ;
 		$club52 = $this->index_model->getNewsList(52) ;
 		
@@ -118,7 +118,7 @@ class index_index extends BaseController {
 				$title_after ="课程回顾" ;
 				break ;
 			case 3:
-				$id = 56 ;
+				$id = 49 ;
 				$hd = array(
 					'text'	=>	'Public Benefit Activities',
 					'title'	=>	'和我们一起感受摄影的快乐',
