@@ -12,7 +12,7 @@
         <div class="apply_t1"><b style="color:#F00;">*</b>确认密码：<input type="password" tabindex="3" class="sele" size="20" maxlength="20" name="repassword" id="repassword"></div>
 		<div class="apply_t1"><b style="color:#F00;">*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" tabindex="3" class="sele" size="20" maxlength="20" name="username" id="username">（请填写真实姓名）</div>
 		<div style="margin:0 auto;width:800px;text-align:left;padding-left:5px;"><label><font color="#B60925"><b>学员须知：</b></font></label></div>
-        <div><textarea rows="12" cols="110" tabindex="1" readonly="true" style="padding:5px 5px;overflow:auto;resize:none">
+        <div><textarea rows="12" cols="90%" tabindex="1" readonly="true" style="padding:5px 5px;overflow:auto;resize:none">
 在您正式提交报名前，请仔细阅读本须知。
 1.请按要求认真填写个人信息，填报内容必须真实准确，所填资料若与事实不符，由此造成的后果由个人承担。
 2.用户在完整填写并提交报名表后，可以通过在线支付或是银行汇款的方式进行支付，您汇款之后请务必联系客服（电话：010-82755840，QQ：800002915），将您的汇款人姓名、充值金额、充值时间信息告知客服。客服核实信息后，会在1个工作日内为您办理注册手续，并为您开通学习帐户。

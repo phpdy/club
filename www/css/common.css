@@ -433,6 +433,13 @@ img{
 	width: 258px;
 	height: 90px;
 }
+.my_button{
+	float:left;
+	display:block;
+	margin-top: 15px;
+	margin-left: 5px;
+	
+}
 .order_list{
 	padding-top: 5px;
 	padding-bottom: 5px;

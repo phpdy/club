@@ -18,7 +18,8 @@
 		<div class="hd_title">活动排期</div>
 		<?php include 'daily.php';?>
 		<?php if(in_array($t, array(1,2,3))){ ?>
-		<div onclick="pay(<?php echo $news['id'];?>)" class="my_order"></div>
+		<div class="my_button"><a href="order.php?t=<?php echo $t;?>&id=<?php echo $news['id'];?>"><img src="./images/bm.gif"/></a></div>
+		<div class="my_button"><a href="user.php?action=reg"><img src="./images/zc.jpg"/></a></div>
 		<?php }?>
 		<?php 
 		foreach($orderlist as $key=>$order){
@@ -30,8 +31,3 @@
 	</div>
 	</div>
 </div>
-<script language="javascript">
-	function pay(id){
-		window.location.href="order.php?t=<?php echo $t;?>&id="+id ;
-	}
-</script>
