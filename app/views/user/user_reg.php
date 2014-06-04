@@ -11,15 +11,31 @@
         <div class="apply_t1"><b style="color:#F00;">*</b>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" tabindex="3" class="sele" size="20" maxlength="20" name="password" id="password">（密码长度不少于6位）</div>
         <div class="apply_t1"><b style="color:#F00;">*</b>确认密码：<input type="password" tabindex="3" class="sele" size="20" maxlength="20" name="repassword" id="repassword"></div>
 		<div class="apply_t1"><b style="color:#F00;">*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" tabindex="3" class="sele" size="20" maxlength="20" name="username" id="username">（请填写真实姓名）</div>
-		<div style="margin:0 auto;width:800px;text-align:left;padding-left:5px;"><label><font color="#B60925"><b>学员须知：</b></font></label></div>
+		<div style="margin:0 auto;width:800px;text-align:left;padding-left:5px;"><label><font color="#B60925"><b>纽摄俱乐部-注册告知函：</b></font></label></div>
         <div><textarea rows="12" cols="90%" tabindex="1" readonly="true" style="padding:5px 5px;overflow:auto;resize:none">
-在您正式提交报名前，请仔细阅读本须知。
-1.请按要求认真填写个人信息，填报内容必须真实准确，所填资料若与事实不符，由此造成的后果由个人承担。
-2.用户在完整填写并提交报名表后，可以通过在线支付或是银行汇款的方式进行支付，您汇款之后请务必联系客服（电话：010-82755840，QQ：800002915），将您的汇款人姓名、充值金额、充值时间信息告知客服。客服核实信息后，会在1个工作日内为您办理注册手续，并为您开通学习帐户。
-3.进入网校学习之前，您需要准备一台电脑，并确保您的电脑已正常接入互联网，接入方式有拨号接入、ISDN、ADSL接入或接入宽带网等。
-4.鉴于在为学员办理各项事务中（包括但不限于办理学籍注册、学员活动保险、预订各类服务等方面）需要学员的个人信息。纽摄教育会保存学员的部分信息，并针对每种业务建立了个人信息保护管理系统，遵守收集、使用和提供个人信息的相关制度，在法律规定的范围内使用学员信息。在处理个人信息问题上，纽摄教育将遵守适用于个人信息保护的相关法律和法规，仅在法律规定的范围内使用，同时未经学员授权不会把相关信息提供给任何第三方。点击此处阅读《纽摄教育个人信息保护政策》（链接地址：http://v.nyipcn.com/clist.php?cid=15&lid=31）。
-        </textarea></div>
-        <div class="apply_t1"><input id="instruction" type="checkbox" checked="checked" value=1 tabindex="2"><b style="color:#F00;">*</b>我已经阅读并接受学员须知（如果您未满18岁，需要您的父母或者监护人同意）。</div>
+您好！
+欢迎您注册成为成为纽摄俱乐部会员！
+纽摄俱乐部（Newshoot Club以下简称NC）是北京纽摄教育科技有限公司的持有品牌，致力于为摄影人提供最有价值的摄影实践、摄影创作、摄影文化交流等活动。
+
+请您认真填写相关信息，纽摄俱乐部就您填写的个人信息承担保密义务。并就个人信息保护政策，做出如下说明与承诺：
+ 
+1.收集、使用和提供个人信息
+鉴于在为俱乐部会员办理各项事务中（包括但不限于办理注册、活动保险、预订各类服务等方面）需要个人信息。纽摄俱乐部会保存会员的部分信息，并针对每种业务建立了个人信息保护管理系统，遵守收集、使用和提供个人信息的相关制度，在法律规定的范围内使用个人信息。
+ 
+2.遵守相关法律和法规
+在处理个人信息问题上，纽摄俱乐部将遵守适用于个人信息保护的相关法律和法规，仅在法律规定的范围内使用，同时未经会员授权不会把相关信息提供给任何第三方。
+ 
+3.尊重信息所有者本人的权利
+当会员要求更正或删除自己的信息，或要求拒绝本人信息的使用或提供时，纽摄俱乐部将充分尊重信息所有者本人的权利，并根据会员的要求予以处理。
+ 
+4.执行安全措施
+为确保个人信息的正确性和安全性，纽摄俱乐部将根据信息安全条例进行个人信息调用的管理、限制个人信息外传途径以及防止来自公司内部与外部的不恰 当调用等，并努力防止信息的遗失、毁坏、篡改或泄露等任何与个人信息相关的问题。对于任何组织与个人窃取、盗用会员个人信息的违法行为，纽摄俱乐部坚决反对，并将配合相关法律部门予以严肃查处。
+ 
+5.不断完善个人信息管理
+纽摄俱乐部让所有员工都认识到个人信息保护的重要性，并认真执行个人信息管理制度，以确保个人信息得到合理的使用和保护。
+
+再次，欢迎您成为纽摄大家庭的一员！</textarea></div>
+        <div class="apply_t1"><input id="instruction" type="checkbox" checked="checked" value=1 tabindex="2"><b style="color:#F00;">*</b>我已经阅读并接受注册告知函。</div>
         </div>
 		<div class="apply_next">
 	        <input type="hidden" name="url" value="<?php echo @$_REQUEST['url'] ;?>">

@@ -41,6 +41,7 @@ include './comm/user_left.php';
         <div class="apply_t1"><b style="color:#F00;">*</b>移动电话：<input type="text" class="sele" size="15" maxlength="15" name="mobile" value="<?php echo $user['mobile']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
         	备用电话：<input type="text" class="sele" size="15" maxlength="15" name="phone" value="<?php echo $user['phone']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>电子邮件：<input type="text" class="sele" size="50" maxlength="100" name="email" value="<?php echo $user['email']; ?>"></div>
+		<div class="apply_t1"> <b style="color:#F00;">*</b><input type="checkbox" class="sele" checked> 用户须知</div>
       </div>
       <div class="apply_next">
         <input type="button" class="btn-img btn-regist" id="infosubmit" value="提交修改" tabindex="5" onclick="return btn()">
