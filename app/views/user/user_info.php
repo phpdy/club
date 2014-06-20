@@ -14,6 +14,7 @@ include './comm/user_left.php';
       <div class="apply_sheet">
       	<input type="hidden" name="url" value="<?php echo @$_GET['url']; ?>">
       	<input type="hidden" class="sele" name="id" value="<?php echo $user['id']; ?>">
+        <div class="apply_t1"><b>欢迎您成为纽摄俱乐部大家庭的一员！请您尽快完善会员信息。</b></div>
         <div class="apply_t1">用户名（不可修改）：<?php echo $user['name']; ?></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>姓名（请填写真实姓名）：<input type="text" tabindex="3" class="sele" size="20" maxlength="20" name="username" value="<?php echo $user['username']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>性别：
@@ -41,7 +42,9 @@ include './comm/user_left.php';
         <div class="apply_t1"><b style="color:#F00;">*</b>移动电话：<input type="text" class="sele" size="15" maxlength="15" name="mobile" value="<?php echo $user['mobile']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
         	备用电话：<input type="text" class="sele" size="15" maxlength="15" name="phone" value="<?php echo $user['phone']; ?>"></div>
         <div class="apply_t1"><b style="color:#F00;">*</b>电子邮件：<input type="text" class="sele" size="50" maxlength="100" name="email" value="<?php echo $user['email']; ?>"></div>
-		<div class="apply_t1"> <b style="color:#F00;">*</b><input type="checkbox" class="sele" checked> 用户须知</div>
+		<!--div class="apply_t1"> <b style="color:#F00;">*</b><input type="checkbox" class="sele" checked> 用户须知</div-->
+		<div class="apply_t1"><textarea rows="5" cols="90%" tabindex="1" readonly="true" style="padding:5px 5px;overflow:auto;resize:none">    你所填写的个人信息是为方便您以后参加俱乐部各类活动时，我们可以及时与您联系。同时也为了能够及时快捷地为您安排行程（比如预定酒店、航班、办理保险等）。<br/>纽摄俱乐部将严格遵守个人信息保护的相关法律和法规，仅在法律规定的范围内使用您的个人信息，未经您的许可不会提供给任何第三方。如果您有任何疑虑，请随时致电纽摄俱乐部。<br/>再次欢迎您成为纽摄俱乐部的一员，共同分享摄影的快乐！</textarea></div>
+
       </div>
       <div class="apply_next">
         <input type="button" class="btn-img btn-regist" id="infosubmit" value="提交修改" tabindex="5" onclick="return btn()">
