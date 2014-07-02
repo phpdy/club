@@ -72,7 +72,7 @@ class index_index extends BaseController {
 		$this->view->assign('list',$list) ;
 
 		
-		$piclist = $this->pic_model->queryAll() ;
+		$piclist = $this->pic_model->queryAll(array('catid'=>57)) ;
 		$this->view->assign('piclist',$piclist) ;
 	}
 	
