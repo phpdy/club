@@ -162,7 +162,7 @@ class index_index extends BaseController {
 	public function oursAction(){
 		$list = $this->index_model->getNewsList(50) ;
 		
-		if(sizeof($list)==1){
+		if(sizeof($list)>=1){
 			$result = $this->index_model->getNewsContent($list[0]['id']) ;
 			$this->view->assign('result',$result) ;
 			
